@@ -1,4 +1,4 @@
-# Devfire Club - Se Liga, hein
+# Se Liga, hein - Devfire Club
 
 ### Objetivos
 
@@ -9,6 +9,8 @@ O produto tem como objetivo promover segurança a grupos sociais que sofrem viol
 
 ### Link da board do projeto
 https://github.com/users/nmaia19/projects/2/views/1
+
+
 
 ### Telas
 
