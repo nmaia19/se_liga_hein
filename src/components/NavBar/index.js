@@ -3,7 +3,7 @@ import "./styles.css";
 
 function NavBar() {
   return (
-    <>
+    <div className="navbar__content">
       <div className="logo">Se liga, Hein</div>
       <nav className="nav">
         <ul className="nav__ul">
@@ -13,12 +13,12 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <Link className="nav__link" to="/sobre">
+            <Link className="nav__link" to="/about">
               Sobre
             </Link>
           </li>
           <li>
-            <Link className="nav__link" to="/pesquisae">
+            <Link className="nav__link" to="/search">
               Pesquisar
             </Link>
           </li>
@@ -34,7 +34,7 @@ function NavBar() {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
 
