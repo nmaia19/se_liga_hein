@@ -1,0 +1,84 @@
+.login__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8%;
+}
+
+.login__account {
+    font-family: 'Montserrat';
+    background: #EAEAEA;
+    border-radius: 40px;
+    width: 50%;
+    width: 553px;
+    margin: auto;
+    height: 423.52px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__account h1 {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #480CA8;
+    margin: 10% 0 0;
+}
+
+.login__account label {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0 0 0 5%;
+    color: #000000;
+}
+
+.login__account input {
+    width: 471.17px;
+    height: 48.56px;
+    left: 485px;
+    top: 329.53px;
+    border: none;
+    margin: 5% auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.login__createaccount {
+    background: #EAEAEA;
+    border-radius: 40px;
+    width: 553px;
+    margin: auto;
+    height: 170.85px;
+    margin: 2% auto;
+
+}
+
+.login__createaccount p {
+    font-family: 'Montserrat';
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #480CA8;
+}
+
+.login__button {
+    display: flex;
+    justify-content: center;
+    margin: 2% 0;
+}
+
+.login__button button {
+    width: 166.1px;
+    height: 50.88px;
+    border: none;
+    background: #480CA8;
+    border-radius: 40px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 100;
+    text-align: center;
+    color: #FFFFFF;
+}

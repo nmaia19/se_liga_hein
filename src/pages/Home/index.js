@@ -1,4 +1,3 @@
-import "./styles.css";
 import AboutUsHome from "../../components/HomeAboutUs/index";
 import HomeDescription from "../../components/HomeDescription";
 import Footer from "../../components/Footer";
