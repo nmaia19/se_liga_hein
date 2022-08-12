@@ -40,12 +40,3 @@ https://github.com/users/nmaia19/projects/2/views/1
 
 #### **Minhas ocorrências**
 ![Image](https://user-images.githubusercontent.com/98717839/183221174-ae29b8b5-4461-4360-97ab-03374bf24989.png)
-
-
-
-
-
-
-
-
-
