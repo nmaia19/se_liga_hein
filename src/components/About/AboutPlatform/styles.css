@@ -1,0 +1,64 @@
+.aboutus__content {
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+}
+
+.aboutus__image {
+    width: 50%;
+    margin: auto;
+}
+
+.aboutus__image img {
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+}
+
+.aboutus__text {
+    width: 40%;
+    text-align: justify;
+    font-family: 'Montserrat';
+    margin: 5% 10% 5% 0;
+}
+
+.aboutus__text h1,
+.aboutus__text p {
+    background-color: #ffffff;
+    margin: 5%;
+}
+
+.aboutus__text h1 {
+    font-weight: bolder;
+    font-size: 40px;
+    line-height: 151.4%;
+    letter-spacing: 0.09em;
+    color: #240864;
+}
+
+.aboutus__text p {
+    font-size: 20px;
+    line-height: 151.4%;
+    letter-spacing: 0.09em;
+    color: #000000;
+}
+
+.aboutus__button {
+    display: flex;
+    justify-content: end;
+    margin: 10% 0;
+}
+
+.aboutus__text button {
+    width: 222px;
+    height: 68px;
+    border: none;
+    background: #480CA8;
+    border-radius: 40px;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 900;
+    text-align: center;
+    color: #FFFFFF;
+}
