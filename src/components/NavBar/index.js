@@ -23,7 +23,7 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <Link className="nav__link" to="/minhaarea">
+            <Link className="nav__link" to="/login">
               Minha Área
             </Link>
           </li>
