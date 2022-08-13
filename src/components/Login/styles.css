@@ -12,7 +12,7 @@
     width: 50%;
     width: 553px;
     margin: auto;
-    height: 423.52px;
+    height: 443.52px;
     display: flex;
     flex-direction: column;
 }
@@ -26,20 +26,20 @@
     margin: 10% 0 0;
 }
 
-.login__account label {
+.login__fieldset {
     font-size: 14px;
     line-height: 17px;
-    margin: 0 0 0 5%;
     color: #000000;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin: 5% auto 0;
 }
 
 .login__account input {
     width: 471.17px;
     height: 48.56px;
-    left: 485px;
-    top: 329.53px;
     border: none;
-    margin: 5% auto;
     background: #FFFFFF;
     border-radius: 5px;
 }
@@ -56,18 +56,23 @@
 
 .login__createaccount p {
     font-family: 'Montserrat';
-
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
     color: #480CA8;
+    margin: 6%;
 }
 
 .login__button {
     display: flex;
     justify-content: center;
     margin: 2% 0;
+}
+
+.login__password {
+    width: 100%;
+    margin: 4% 7% ;
 }
 
 .login__button button {
