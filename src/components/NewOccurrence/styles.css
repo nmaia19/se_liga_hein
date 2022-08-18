@@ -1,0 +1,134 @@
+/* all */
+.new-occurrences__container {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    justify-content: center;
+    margin: 0 8% 5%;
+}
+
+/* heading */
+.new-occurrences__heading {
+    color: #eaeaea;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 34px;
+    margin: 5% 0 0;
+    text-align: center;
+}
+
+/* form */
+.new-occurrences__form {
+    background: #eaeaea;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 3% auto 0;
+    padding: 4%;
+    width: 90%;
+}
+.new-occurrences__form__group {
+    display: flex;
+    margin: 2.5% 0 0;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.blocks-1 .new-occurrences___form__fieldset {
+    width: 100%;
+}
+.blocks-2 .new-occurrences___form__fieldset {
+    width: 47%;
+}
+.blocks-3 .new-occurrences___form__fieldset {
+    width: 31%;
+}
+.blocks-4 .new-occurrences___form__fieldset {
+    width: 23%;
+}
+
+.new-occurrences___form__fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1%;
+    padding: 1%;
+    resize: none;
+}
+
+input::placeholder,
+select,
+input,
+textarea {
+    color: dimgray;
+    font-family: inherit;
+    outline: none;
+}
+
+.new-occurrences___form__fieldset input,
+select {
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding-left: 2%;
+    height: 40px;
+    margin: 2% auto 0;
+    width: 100%;
+}
+/* labels */
+label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* terms and conditions */
+.terms-label {
+    font-weight: bold;
+}
+.checkbox-group {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5%;
+}
+
+#terms-checkbox {
+    height: 30px;
+    margin-right: 2%;
+    width: 5%;
+}
+
+#terms-checkbox,
+select,
+button,
+option {
+    cursor: pointer;
+}
+
+/* button */
+button {
+    background: #480ca8;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 1px 1px 4px grey;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    height: 50px;
+    text-align: center;
+    width: 30%;
+}
+
+button:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
