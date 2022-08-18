@@ -1,9 +1,10 @@
 import "./styles.css";
+import LoginMain from "./../../components/Login/index";
 
 function Login() {
   return (
     <div>
-      <p>Se liga Home</p>
+      <LoginMain />
     </div>
   );
 }
