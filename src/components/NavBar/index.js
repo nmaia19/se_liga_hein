@@ -28,7 +28,7 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <Link to="/criaocorrencia">
+            <Link to="/new-occurrence">
               <button className="nav__link--button">Criar Ocorrência</button>
             </Link>
           </li>
