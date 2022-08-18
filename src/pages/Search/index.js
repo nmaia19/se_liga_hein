@@ -1,11 +1,11 @@
-import "./styles.css";
+import './styles.css'
 
 function Search() {
   return (
     <div>
-      <p>Se liga Search</p>
+      <h1>Search</h1>
     </div>
-  );
+  )
 }
 
-export default Search;
+export default Search
