@@ -25,9 +25,8 @@ function AboutPlatform() {
             </li>
           </ul>
         </p>
-
         <div className="aboutus__button">
-          <button>Procurar ocorrências</button>
+          <button className="button">Procurar ocorrências</button>
         </div>
       </div>
     </div>
