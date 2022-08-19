@@ -1,5 +1,6 @@
 import "./styles.css";
 import descriptionImage from "./../../assets/images/map__foto.png";
+
 function HomeDescription() {
   return (
     <div className="description__content">
