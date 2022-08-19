@@ -27,7 +27,7 @@ function LoginMain() {
         <div className="login__button">
           <Link to="/create-account">
               <button className="button__link-create-account">Criar conta</button>
-            </Link>
+          </Link>
         </div>
       </div>
     </div>
