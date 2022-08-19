@@ -9,7 +9,7 @@ function Search() {
     <div>
       <form onSubmit="" className="search-form">
         <input
-          className="form__input"
+          className="search__input"
           placeholder="Digite sua busca"
           type="text"
           name="name"
@@ -18,7 +18,7 @@ function Search() {
         />
 
         <select
-          className="form__select"
+          className="search__select"
           name="category"
           // onChange={handleChange}
         >
@@ -30,7 +30,7 @@ function Search() {
           ))}
         </select>
 
-        <button className="form__btn" type="submit">
+        <button className="search__btn" type="submit">
           Buscar
         </button>
       </form>
