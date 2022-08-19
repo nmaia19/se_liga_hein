@@ -1,5 +1,6 @@
 import "./styles.css";
 import AboutUsImage from "./../../assets/images/aboutus__foto.png";
+
 function AboutUsHome() {
   return (
     <div className="aboutus__content">

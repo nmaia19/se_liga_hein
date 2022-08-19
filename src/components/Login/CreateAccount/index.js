@@ -1,25 +1,21 @@
 import { useState, useEffect } from "react";
 import "./styles.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function LoginMain() {
+function CreateAccount() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignin = () => {
-    const LocalPassword = localStorage.getItem("password");
-    const LocalEmail = localStorage.getItem("email");
+  const handleSignup = () => {
     if (!email | !password) {
       alert("Preencha todos os campos");
     }
-    if (email !== LocalEmail && password !== LocalPassword) {
-      alert("Login incorreto");
-    }
-    if (email === LocalEmail && password === LocalPassword) {
-      alert("Login efetuado com sucesso!");
-      navigate("/");
+    if (email.length > 0 && password.length > 0) {
+      localStorage.setItem("password", password);
+      localStorage.setItem("email", email);
+      alert("Usuário cadatrado com sucesso!");
+      navigate("/login");
     }
   };
 
@@ -40,29 +36,16 @@ function LoginMain() {
         <fieldset className="login__fieldset">
           <label htmlFor="password">Senha</label>
           <input
-          value={password}
+            value={password}
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
             aria-label="Senha"
           />
         </fieldset>
-        <a className="login__password" href="/">
-          Esqueceu sua senha?
-        </a>
         <div className="login__button">
-          <button type="button" onClick={handleSignin}>
-            Entrar
-          </button>
-        </div>
-      </div>
-      <div className="login__createaccount">
-        <p>Ainda não possui conta?</p>
-        <div className="login__button">
-          <button>
-            <Link className="nav__link" to="/createaccount">
-              Criar conta
-            </Link>
+          <button type="button" onClick={handleSignup}>
+            Criar conta
           </button>
         </div>
       </div>
@@ -70,4 +53,4 @@ function LoginMain() {
   );
 }
 
-export default LoginMain;
+export default CreateAccount;
