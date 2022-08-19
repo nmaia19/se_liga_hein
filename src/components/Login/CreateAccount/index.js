@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function CreateAccount() {
   const [email, setEmail] = useState("");
@@ -9,12 +10,20 @@ function CreateAccount() {
 
   const handleSignup = () => {
     if (!email | !password) {
-      alert("Preencha todos os campos");
+      Swal.fire({
+        icon: "error",
+        title: "Preencha todos os campos",
+        showConfirmButton: false,
+      });
     }
     if (email.length > 0 && password.length > 0) {
       localStorage.setItem("password", password);
       localStorage.setItem("email", email);
-      alert("Usuário cadatrado com sucesso!");
+      Swal.fire({
+        icon: "success",
+        title: "Usuário cadatrado com sucesso!",
+        showConfirmButton: false,
+      });
       navigate("/login");
     }
   };

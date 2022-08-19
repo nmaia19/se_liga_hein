@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function LoginMain() {
   const [email, setEmail] = useState("");
@@ -12,13 +13,25 @@ function LoginMain() {
     const LocalPassword = localStorage.getItem("password");
     const LocalEmail = localStorage.getItem("email");
     if (!email | !password) {
-      alert("Preencha todos os campos");
+      Swal.fire({
+        icon: "error",
+        title: "Preencha todos os campos",
+        showConfirmButton: false,
+      });
     }
-    if (email !== LocalEmail && password !== LocalPassword) {
-      alert("Login incorreto");
+    if ((email !== LocalEmail) | (password !== LocalPassword)) {
+      Swal.fire({
+        icon: "error",
+        title: "Login incorreto",
+        showConfirmButton: false,
+      });
     }
     if (email === LocalEmail && password === LocalPassword) {
-      alert("Login efetuado com sucesso!");
+      Swal.fire({
+        icon: "success",
+        title: "Login efetuado com sucesso!",
+        showConfirmButton: false,
+      });
       navigate("/");
     }
   };
@@ -47,7 +60,7 @@ function LoginMain() {
             aria-label="Senha"
           />
         </fieldset>
-        <a className="login__password" href="/">
+        <a className="login__password" href="/createaccount">
           Esqueceu sua senha?
         </a>
         <div className="login__button">
