@@ -1,3 +1,4 @@
+import Card from '../../components/Search/Card'
 import './styles.css'
 
 function Search() {
@@ -13,6 +14,9 @@ function Search() {
       <button type="button" onClick="">
         Buscar
       </button>
+      <div className="search__cards">
+        <Card />
+      </div>
     </div>
   )
 }
