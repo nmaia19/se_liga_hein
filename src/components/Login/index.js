@@ -40,7 +40,7 @@ function LoginMain() {
         <fieldset className="login__fieldset">
           <label htmlFor="password">Senha</label>
           <input
-          value={password}
+            value={password}
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
@@ -59,11 +59,9 @@ function LoginMain() {
       <div className="login__createaccount">
         <p>Ainda não possui conta?</p>
         <div className="login__button">
-          <button>
-            <Link className="nav__link" to="/createaccount">
-              Criar conta
-            </Link>
-          </button>
+          <Link to="/createaccount">
+            <button> Criar conta </button>
+          </Link>
         </div>
       </div>
     </div>

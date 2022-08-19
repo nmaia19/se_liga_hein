@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import CreateAccount from "./pages/CreateAccount";
+import NewOccurrence from "./pages/NewOccurrence";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/new-occurrence" element={<NewOccurrence />}/>
       </Routes>
     </div>
   );
