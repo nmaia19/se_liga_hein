@@ -33,6 +33,8 @@
     cursor: pointer;
 }
 
+
+
 .nav__link--button {
     margin: 0 5rem 0 1rem;
     width: 195px;
@@ -44,4 +46,39 @@
     line-height: 22px;
     text-align: center;
     color: #480CA8;
+}
+
+.nav__link--area {
+    position: relative;
+
+}
+
+.nav__link--hover {
+    position: absolute;
+    right: 20%;
+    margin-top: 0px;
+    height: auto;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    color: #480CA8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 150px;
+    height: 84px;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.nav__link--hover-divider {
+    width: 100%;
+    border-bottom: #480CA8 solid 2px;
+    padding: 5px;
+    margin-bottom: 5px;
 }

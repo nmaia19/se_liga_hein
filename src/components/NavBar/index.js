@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./styles.css";
-
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 function NavBar() {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignout = () => {
+    localStorage.clear();
+  };
+
   return (
     <div className="navbar__content">
       <div className="logo">Se liga, Hein</div>
@@ -22,10 +31,26 @@ function NavBar() {
               Pesquisar
             </Link>
           </li>
-          <li>
+          <li
+            className="nav__link--area"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+          >
             <Link className="nav__link" to="/login">
-              Minha Área
+              <span>Minha Área</span>
             </Link>
+            {open && (
+              <div className="nav__link--hover">
+                <a onMouseEnter={() => setOpen(true)} href="/myoccurrences">
+                  Minhas ocorrências
+                </a>
+                <div className="nav__link--hover-divider" />
+
+                <a onClick={() => handleSignout} href="/">
+                  Sair
+                </a>
+              </div>
+            )}
           </li>
           <li>
             <Link to="/new-occurrence">
