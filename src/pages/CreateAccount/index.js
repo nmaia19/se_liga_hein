@@ -1,9 +1,9 @@
-import './styles.css'
+import FormCreateAccount from '../../components/FormCreateAccount'
 
 export default function() {
     return(
         <div>
-            <p>Criar conta</p>
+            <FormCreateAccount />
         </div>
     )
 }
