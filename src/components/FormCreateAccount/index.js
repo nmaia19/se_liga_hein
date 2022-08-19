@@ -80,9 +80,16 @@ export default function () {
 
 
                 <div className='form__terms'>
+                    <p className='terms__title'>Termos e condições</p>
                     <fieldset className="terms__fieldset">
-                        <label className='fieldset__title-terms' for="terms-conditions">Termos e condições</label>
-                        <textarea className='fieldset__input-terms' rows="1" cols="1000" disabled>
+                        <textarea className='fieldset__text' rows="1" cols="1000" disabled>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                            Aldus PageMaker including versions of Lorem Ipsum.
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -92,13 +99,13 @@ export default function () {
                             Aldus PageMaker including versions of Lorem Ipsum.
                         </textarea>
                     </fieldset>
-                    <fieldset className="terms__fieldset">
-                        <input type="checkbox" name="aceitar-termos" />
-                        <label for="termos-condicoes"> Li e aceito os termos e condições.</label>
+                    <fieldset className="terms__fieldset-checkbox">
+                        <input className='fieldset-checkbox__input' type="checkbox" name="accept-terms" />
+                        <label className='fieldset-checkbox__text' for="accept-terms"> Li e aceito os termos e condições.</label>
                     </fieldset>
                 </div>
 
-                <button className='form_btn' type='submit'>Criar conta</button>
+                <button className='btn' type='submit'>Criar conta</button>
 
             </form>
         </div>
