@@ -1,5 +1,7 @@
 import "./styles.css";
 
+import { Link } from "react-router-dom";
+
 function LoginMain() {
   return (
     <div className="login__content">
@@ -23,7 +25,9 @@ function LoginMain() {
       <div className="login__createaccount">
         <p>Ainda não possui conta?</p>
         <div className="login__button">
-          <button>Criar conta</button>
+          <Link to="/create-account">
+              <button className="button__link-create-account">Criar conta</button>
+            </Link>
         </div>
       </div>
     </div>
