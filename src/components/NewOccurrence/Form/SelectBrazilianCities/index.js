@@ -1,12 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { citiesAlphabeticalOrder, getCitiesByState } from "../../API-IBGE/ibge";
 
+const SelectBrazilianCities = ({ state, onChange = () => {} }) => {
+  const [cities, setCities] = useState([]);
 
-const SelectBrazilianCities = () => {
-    return (
-        <select name="city" id="city">
-              <option value="">Selecionar</option>
-            </select>
-    )
-}
+  useEffect(() => {
+    getCitiesByState(state)
+      .then(citiesAlphabeticalOrder)
+      .then((cities) => {
+        setCities(cities);
+      });
+  }, [state]);
+
+  return (
+    <select name="city" id="city" onChange={onChange}>
+      <option value="">Selecionar</option>
+      {cities.map((city) => {
+        const { value, label } = city;
+        return (
+          <option value={value} key={value}>
+            {label}
+          </option>
+        );
+      })}
+    </select>
+  );
+};
 
 export default SelectBrazilianCities;

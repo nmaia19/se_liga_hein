@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
@@ -16,6 +17,14 @@ function NewOccurrenceForm() {
     "Intolerância religiosa",
     "Outro",
   ];
+
+  const [formValues, setFormValues] = useState([]);
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { value, name } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
 
   return (
     <div className="new-occurrences__container">
@@ -80,12 +89,15 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-         <SelectBrazilianStates/>
+            <SelectBrazilianStates onChange={handleInputChange} />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
-           <SelectBrazilianCities/>
+            <SelectBrazilianCities
+              state={formValues.state}
+              onChange={handleInputChange}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">

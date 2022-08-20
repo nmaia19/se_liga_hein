@@ -1,23 +1,24 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { fetchStates } from "../../API-IBGE/ibge";
+import { useState, useEffect } from "react";
+import { getStates, statesAlphabeticalOrder } from "../../API-IBGE/ibge";
 
-
-const SelectBrazilianStates = () => {
-
-const [states, setStates] = useState([]);
+const SelectBrazilianStates = ({ onChange = () => {} }) => {
+  const [states, setStates] = useState([]);
 
   useEffect(() => {
-    fetchStates().then((states) => {setStates(states)});
+    getStates().then(statesAlphabeticalOrder).then(setStates);
   }, []);
 
   return (
-    <select name="state" id="state">
+    <select name="state" id="state" onChange={onChange}>
       <option value="">Selecionar</option>
-      {states.map((state)=> {
-        const {sigla, nome} = state;
-        return (<option key={sigla} value={sigla}>{nome}</option>)
-      } )}
+      {states.map((state) => {
+        const { value, label } = state;
+        return (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        );
+      })}
     </select>
   );
 };
