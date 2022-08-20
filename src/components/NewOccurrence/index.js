@@ -1,3 +1,5 @@
+import SelectBrazilianStates from "./Form/SelectBrazilianStates";
+import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 
 function NewOccurrenceForm() {
@@ -78,16 +80,12 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-            <select name="state" id="state">
-              <option value="">Selecionar</option>
-            </select>
+         <SelectBrazilianStates/>
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
-            <select name="city" id="city">
-              <option value="">Selecionar</option>
-            </select>
+           <SelectBrazilianCities/>
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
