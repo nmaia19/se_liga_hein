@@ -166,7 +166,9 @@ function NewOccurrenceForm() {
           </label>
         </div>
         <div className="new-occurrences__form__group">
-          <button type="submit">Registrar ocorrência</button>
+          <button className="newOccurrence__button" type="submit">
+            Registrar ocorrência
+          </button>
         </div>
       </form>
     </div>

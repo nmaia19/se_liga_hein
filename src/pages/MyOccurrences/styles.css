@@ -1,0 +1,48 @@
+.filters {
+    width: 50%;
+    display: inline-flex;
+}
+
+.card__occurrence {
+    width: 607px;
+    background: #ffffff;
+    height: 113px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.card__occurrence--headercard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__occurrence--address {
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.card__occurrence--button {
+    margin: auto;
+    width: 90px;
+    height: 21px;
+    background: #480CA8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.main__cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
