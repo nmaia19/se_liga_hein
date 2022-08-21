@@ -1,17 +1,14 @@
 import { useState } from "react";
 import "./styles.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function LoginMain() {
+function CreateAccount() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignin = () => {
-    const LocalPassword = localStorage.getItem("password");
-    const LocalEmail = localStorage.getItem("email");
+  const handleSignup = () => {
     if (!email | !password) {
       Swal.fire({
         icon: "error",
@@ -19,20 +16,15 @@ function LoginMain() {
         showConfirmButton: false,
       });
     }
-    if ((email !== LocalEmail) | (password !== LocalPassword)) {
-      Swal.fire({
-        icon: "error",
-        title: "Login incorreto",
-        showConfirmButton: false,
-      });
-    }
-    if (email === LocalEmail && password === LocalPassword) {
+    if (email.length > 0 && password.length > 0) {
+      localStorage.setItem("password", password);
+      localStorage.setItem("email", email);
       Swal.fire({
         icon: "success",
-        title: "Login efetuado com sucesso!",
+        title: "Usuário cadatrado com sucesso!",
         showConfirmButton: false,
       });
-      navigate("/");
+      navigate("/login");
     }
   };
 
@@ -60,25 +52,14 @@ function LoginMain() {
             aria-label="Senha"
           />
         </fieldset>
-        <a className="login__password" href="/createaccount">
-          Esqueceu sua senha?
-        </a>
         <div className="login__button">
-          <button type="button" onClick={handleSignin}>
-            Entrar
+          <button type="button" onClick={handleSignup}>
+            Criar conta
           </button>
-        </div>
-      </div>
-      <div className="login__createaccount">
-        <p>Ainda não possui conta?</p>
-        <div className="login__button">
-          <Link to="/createaccount">
-            <button> Criar conta </button>
-          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginMain;
+export default CreateAccount;
