@@ -132,3 +132,11 @@ button:hover {
     transform: scale(1.02);
     transition: 0.3s ease;
 }
+
+.warning {
+    color: #FF7878;
+    margin: 2% auto;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;   
+}
