@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Search from "./pages/Search";
 import CreateAccount from "./pages/CreateAccount";
 import NewOccurrence from "./pages/NewOccurrence";
+import CreateAccount from "./pages/CreateAccount";
 
 function App() {
   return (

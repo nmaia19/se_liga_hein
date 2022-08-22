@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
+import { Link } from "react-router-dom";
+
 function LoginMain() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,8 +74,13 @@ function LoginMain() {
       <div className="login__createaccount">
         <p>Ainda não possui conta?</p>
         <div className="login__button">
+<<<<<<< HEAD
           <Link to="/createaccount">
             <button> Criar conta </button>
+=======
+          <Link to="/create-account">
+              <button className="nav__link-create-account">Criar conta</button>
+>>>>>>> create-account
           </Link>
         </div>
       </div>
