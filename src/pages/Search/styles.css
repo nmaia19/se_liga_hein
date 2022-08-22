@@ -11,11 +11,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+}
+
+.search-form svg {
+  position: absolute;
+  left: 17px;
 }
 
 .search__input {
@@ -33,6 +39,7 @@
   width: 153px;
   height: 61px;
 
+  text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
