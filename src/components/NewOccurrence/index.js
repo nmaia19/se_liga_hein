@@ -1,6 +1,10 @@
+import { useState } from "react";
+import SelectBrazilianStates from "./Form/SelectBrazilianStates";
+import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 
 function NewOccurrenceForm() {
+  // Select Options
   const options = ["Sim", "Não"];
   const violences = [
     "Racismo",
@@ -15,20 +19,59 @@ function NewOccurrenceForm() {
     "Outro",
   ];
 
+  // UF and City data
+  const [localValues, setLocalValues] = useState([]);
+  const handleLocalChange = (e) => {
+    e.preventDefault();
+    const { value, name } = e.target;
+    setLocalValues({ ...localValues, [name]: value });
+  };
+
+  // saving form data in localStorage
+  const [formValues, setFormValues] = useState({});
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === "checkbox";
+    const data = formValues[name] || {};
+    if (isCheckbox) {data[value] = checked;}
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const occurrence = Object.fromEntries(formData);
+    let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
+    occurrences.push(occurrence);
+    localStorage.setItem("occurrences", JSON.stringify(occurrences));
+  };
+
   return (
     <div className="new-occurrences__container">
       <h1 className="new-occurrences__heading">Nova ocorrência</h1>
 
-      <form className="new-occurrences__form">
+      <form className="new-occurrences__form" onSubmit={handleSubmit}>
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="name">Nome</label>
-            <input type="text" name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleInputChange}
+              value={formValues.name || ""}
+            />
           </fieldset>
 
           <fieldset classNameName="new-occurrences___form__fieldset">
             <label htmlFor="victim">A vítima é você?</label>
-            <select name="victim" id="victim">
+            <select
+              name="victim"
+              id="victim"
+              onChange={handleInputChange}
+              value={formValues.victim || ""}
+            >
               <option value="">Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
@@ -40,19 +83,36 @@ function NewOccurrenceForm() {
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="victim-name">Nome da vítima</label>
-            <input type="text" name="victim-name" id="victim-name" />
+            <input
+              type="text"
+              name="victimName"
+              id="victim-name"
+              onChange={handleInputChange}
+              value={formValues.victimName || ""}
+            />
           </fieldset>
         </div>
 
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="age">Idade</label>
-            <input type="number" name="age" id="age" />
+            <input
+              type="number"
+              name="age"
+              id="age"
+              onChange={handleInputChange}
+              value={formValues.age || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="violence-category">Violência sofrida</label>
-            <select name="violence-category" id="violence-category">
+            <label htmlFor="violence">Violência sofrida</label>
+            <select
+              name="violence"
+              id="violence"
+              onChange={handleInputChange}
+              value={formValues.violence || ""}
+            >
               <option value="">Selecione uma categoria</option>
               {violences.map((violence) => (
                 <option key={violence} value={violence}>
@@ -63,8 +123,13 @@ function NewOccurrenceForm() {
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="physical-aggression">Houve agressão física?</label>
-            <select name="physical-aggression" id="physical-aggression">
+            <label htmlFor="physicalAggression">Houve agressão física?</label>
+            <select
+              name="physicalAggression"
+              id="physicalAggression"
+              onChange={handleInputChange}
+              value={formValues.physicalAggression || ""}
+            >
               <option value="">Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
@@ -78,26 +143,41 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-            <select name="state" id="state">
-              <option value="">Selecionar</option>
-            </select>
+            <SelectBrazilianStates
+              onChange={handleLocalChange}
+              value={formValues.state || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
-            <select name="city" id="city">
-              <option value="">Selecionar</option>
-            </select>
+            <SelectBrazilianCities
+              state={localValues.state}
+              onChange={handleLocalChange}
+              value={formValues.city || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="date">Data</label>
-            <input type="date" id="date" />
+            <input
+              name="date"
+              type="date"
+              id="date"
+              onChange={handleInputChange}
+              value={formValues.date || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="time">Horário</label>
-            <input type="time" id="time" />
+            <input
+              name="time"
+              type="time"
+              id="time"
+              onChange={handleInputChange}
+              value={formValues.time || ""}
+            />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group blocks-2">
@@ -108,12 +188,20 @@ function NewOccurrenceForm() {
               name="local"
               id="local"
               placeholder="Digite o endereço"
+              onChange={handleInputChange}
+              value={formValues.local || ""}
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="establishment">Nome do estabelecimento</label>
-            <input type="text" name="establishment" id="establishment" />
+            <input
+              type="text"
+              name="establishment"
+              id="establishment"
+              onChange={handleInputChange}
+              value={formValues.establishment || ""}
+            />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group blocks-1">
@@ -125,6 +213,8 @@ function NewOccurrenceForm() {
               id="description"
               cols="30"
               rows="10"
+              onChange={handleInputChange}
+              value={formValues.description || ""}
             ></textarea>
           </fieldset>
         </div>
@@ -160,10 +250,14 @@ function NewOccurrenceForm() {
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
-          <input type="checkbox" name="terms-checkbox" id="terms-checkbox" />
-          <label htmlFor="terms-checkbox">
-            Li e aceito os termos e condições.
-          </label>
+          <input
+            type="checkbox"
+            name="termsCheck"
+            id="termsCheck"
+            onChange={handleInputChange}
+            checked={formValues.termsCheck}
+          />
+          <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
         <div className="new-occurrences__form__group">
           <button type="submit">Registrar ocorrência</button>
