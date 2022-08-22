@@ -33,6 +33,7 @@ function LoginMain() {
         showConfirmButton: false,
       });
       navigate("/");
+      window.location.reload();
     }
   };
 
