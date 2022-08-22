@@ -11,8 +11,7 @@ export const getCitiesByState = async (state) => {
   if (!state) return Promise.resolve([]);
 
   const url = `${baseUrl}/localidades/estados/${state}/municipios`;
-  const response = await fetch(url);
-  return convertToJson(response);
+  return fetch(url).then(convertToJson);
 };
 
 export const statesAlphabeticalOrder = (states) => {

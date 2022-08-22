@@ -18,13 +18,12 @@ function NewOccurrenceForm() {
     "Outro",
   ];
 
-  const [formValues, setFormValues] = useState([]);
-  const handleInputChange = (e) => {
+  const [localValues, setLocalValues] = useState([]);
+  const handleLocalChange = (e) => {
     e.preventDefault();
     const { value, name } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setLocalValues({ ...localValues, [name]: value });
   };
-
 
   return (
     <div className="new-occurrences__container">
@@ -89,14 +88,14 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-            <SelectBrazilianStates onChange={handleInputChange} />
+            <SelectBrazilianStates onChange={handleLocalChange} />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
             <SelectBrazilianCities
-              state={formValues.state}
-              onChange={handleInputChange}
+              state={localValues.state}
+              onChange={handleLocalChange}
             />
           </fieldset>
 
