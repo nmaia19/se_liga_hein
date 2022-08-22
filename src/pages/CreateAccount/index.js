@@ -1,12 +1,8 @@
 import "./styles.css";
-import CreateAccount from "./../../components/Login/CreateAccount";
+import FormCreateAccount from "../../components/FormCreateAccount";
 
-function Login() {
-  return (
-    <div>
-      <CreateAccount />
-    </div>
-  );
+function CreateAccount() {
+  return <FormCreateAccount />;
 }
 
-export default Login;
+export default CreateAccount;

@@ -33,6 +33,7 @@ function LoginMain() {
         showConfirmButton: false,
       });
       navigate("/");
+      window.location.reload();
     }
   };
 
@@ -72,8 +73,8 @@ function LoginMain() {
       <div className="login__createaccount">
         <p>Ainda não possui conta?</p>
         <div className="login__button">
-          <Link to="/createaccount">
-            <button> Criar conta </button>
+          <Link to="/create-account">
+            <button className="nav__link-create-account">Criar conta</button>
           </Link>
         </div>
       </div>
