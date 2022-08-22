@@ -5,7 +5,6 @@ import "./App.css";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
-import CreateAccount from "./pages/CreateAccount";
 import NewOccurrence from "./pages/NewOccurrence";
 import CreateAccount from "./pages/CreateAccount";
 
@@ -17,9 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/createaccount" element={<CreateAccount />} />
+        <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/new-occurrence" element={<NewOccurrence />}/>
+        <Route path="/new-occurrence" element={<NewOccurrence />} />
       </Routes>
     </div>
   );
