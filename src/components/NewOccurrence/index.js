@@ -2,8 +2,11 @@ import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function NewOccurrenceForm() {
+  const navigate = useNavigate();
   const options = ["Sim", "Não"];
   const violences = [
     "Racismo",
@@ -87,6 +90,7 @@ function NewOccurrenceForm() {
           "Você precisa ter 18 anos ou mais para cadastrar uma ocorrência.",
       });
       warningTime();
+      
     } else {
       // Salvar nova ocorrência no localStorage
       const formData = new FormData(e.target);
@@ -94,6 +98,19 @@ function NewOccurrenceForm() {
       let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
       occurrences.push(occurrence);
       localStorage.setItem("occurrences", JSON.stringify(occurrences));
+
+      // Exibir mensagem 'Ocorrência salva'
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Sua ocorrência foi registrada",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      // Redirecionar usuário
+      setTimeout(() => {
+        navigate("/search");
+      }, 2500);
     }
   };
 
