@@ -1,7 +1,21 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
 function NavBar() {
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    var item = localStorage.getItem("email");
+    console.log(localStorage.getItem("email"));
+    if (item) {
+      setLogged(true);
+    }
+  }, []);
+
+  console.log(logged, "logged");
+
   return (
     <div className="navbar__content">
       <div className="logo">Se liga, Hein</div>
@@ -24,7 +38,7 @@ function NavBar() {
           </li>
           <li>
             <Link className="nav__link" to="/login">
-              Minha Área
+              {logged ? "Minha Área" : "Entrar"}
             </Link>
           </li>
           <li>

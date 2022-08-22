@@ -27,6 +27,7 @@ export default function FormCreateAccount() {
         showConfirmButton: false,
       });
       navigate("/login");
+      window.location.reload();
     }
     if (password !== confirmedPassword) {
       Swal.fire({
@@ -35,6 +36,7 @@ export default function FormCreateAccount() {
         showConfirmButton: false,
       });
       navigate("/create-account");
+      window.location.reload();
     }
   };
   return (
