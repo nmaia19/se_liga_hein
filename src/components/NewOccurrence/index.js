@@ -1,3 +1,6 @@
+import { useState } from "react";
+import SelectBrazilianStates from "./Form/SelectBrazilianStates";
+import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 import React from "react";
 
@@ -20,6 +23,7 @@ function NewOccurrenceForm() {
 
   console.log(formData, "teste");
 
+  // Select Options
   const options = ["Sim", "Não"];
 
   const violences = [
@@ -48,12 +52,46 @@ function NewOccurrenceForm() {
     ).then((response) => response.json());
   }
 
- 
+  // UF and City data
+  const [localValues, setLocalValues] = useState([]);
+  const handleLocalChange = (e) => {
+    e.preventDefault();
+    setFormData({ ...formData, state: e.target.value });
+    setFormData({ ...formData, city: e.target.value });
+    const { value, name } = e.target;
+    setLocalValues({ ...localValues, [name]: value });
+  };
+
+  // saving form data in localStorage
+  const [formValues, setFormValues] = useState({});
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === "checkbox";
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const occurrence = Object.fromEntries(formData);
+    let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
+    occurrences.push(occurrence);
+    localStorage.setItem("occurrences", JSON.stringify(occurrences));
+  };
+
   return (
     <div className="new-occurrences__container">
       <h1 className="new-occurrences__heading">Nova ocorrência</h1>
-
-      <form className="new-occurrences__form" method="post">
+      <form
+        className="new-occurrences__form"
+        method="post"
+        onSubmit={handleSubmit}
+      >
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="name">Nome</label>
@@ -157,30 +195,19 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-            <select
-              name="state"
-              id="state"
-              onChange={(e) =>
-                setFormData({ ...formData, state: e.target.value })
-              }
-              value={formData.state}
-            >
-              <option>Selecionar</option>
-            </select>
+            <SelectBrazilianStates
+              onChange={handleLocalChange}
+              value={formValues.state || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
-            <select
-              name="city"
-              id="city"
-              onChange={(e) =>
-                setFormData({ ...formData, city: e.target.value })
-              }
-              value={formData.city}
-            >
-              <option>Selecionar</option>
-            </select>
+            <SelectBrazilianCities
+              state={localValues.state}
+              onChange={handleLocalChange}
+              value={formValues.city || ""}
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
@@ -283,10 +310,14 @@ function NewOccurrenceForm() {
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
-          <input type="checkbox" name="terms-checkbox" id="terms-checkbox" />
-          <label htmlFor="terms-checkbox">
-            Li e aceito os termos e condições.
-          </label>
+          <input
+            type="checkbox"
+            name="termsCheck"
+            id="termsCheck"
+            onChange={handleInputChange}
+            checked={formValues.termsCheck}
+          />
+          <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
         <div className="new-occurrences__form__group">
           <button

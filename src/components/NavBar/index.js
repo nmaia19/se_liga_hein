@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 function NavBar() {
@@ -8,6 +9,14 @@ function NavBar() {
   const handleSignout = () => {
     localStorage.clear();
   };
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    var item = localStorage.getItem("email");
+    if (item) {
+      setLogged(true);
+    }
+  }, [logged]);
 
   return (
     <div className="navbar__content">
@@ -35,7 +44,7 @@ function NavBar() {
             onMouseLeave={() => setOpen(false)}
           >
             <Link className="nav__link" to="/login">
-              <span>Minha Área</span>
+              {logged ? "Minha Área" : "Entrar"}
             </Link>
             {open && (
               <div className="nav__link--hover">
@@ -43,7 +52,6 @@ function NavBar() {
                   Minhas ocorrências
                 </a>
                 <div className="nav__link--hover-divider" />
-
                 <a onClick={() => handleSignout} href="/">
                   Sair
                 </a>
