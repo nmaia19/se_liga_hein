@@ -1,8 +1,13 @@
 .filters {
-    width: 50%;
-    display: inline-flex;
+    width: 100%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
 }
 
+.filter{
+    width: 30%;
+}
 .card__occurrence {
     width: 607px;
     background: #ffffff;
@@ -44,5 +49,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.main__cards--div {
     margin: auto;
 }

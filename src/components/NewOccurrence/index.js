@@ -1,7 +1,27 @@
 import "./styles.css";
+import React from "react";
 
 function NewOccurrenceForm() {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    age: 0,
+    city: "",
+    date: "",
+    local: "",
+    time: "",
+    establishment: "",
+    description: "",
+    violenc: "",
+    physicalAggression: "",
+    victim: "",
+    victimName: "",
+    state: "",
+  });
+
+  console.log(formData, "teste");
+
   const options = ["Sim", "Não"];
+
   const violences = [
     "Racismo",
     "Xenofobia",
@@ -15,21 +35,50 @@ function NewOccurrenceForm() {
     "Outro",
   ];
 
+  function submitData(evt) {
+    evt.preventDefault();
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    };
+    fetch(
+      "https://6304f02a697408f7edbe9e13.mockapi.io/occorrences",
+      requestOptions
+    ).then((response) => response.json());
+  }
+
+ 
   return (
     <div className="new-occurrences__container">
       <h1 className="new-occurrences__heading">Nova ocorrência</h1>
 
-      <form className="new-occurrences__form">
+      <form className="new-occurrences__form" method="post">
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="name">Nome</label>
-            <input type="text" name="name" id="name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              value={formData.name}
+            />
           </fieldset>
 
           <fieldset classNameName="new-occurrences___form__fieldset">
             <label htmlFor="victim">A vítima é você?</label>
-            <select name="victim" id="victim">
-              <option value="">Selecione uma opção</option>
+            <select
+              id="victim"
+              value={formData.victim}
+              name="victim"
+              onChange={(e) =>
+                setFormData({ ...formData, victim: e.target.value })
+              }
+            >
+              <option>Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -39,21 +88,44 @@ function NewOccurrenceForm() {
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="victim-name">Nome da vítima</label>
-            <input type="text" name="victim-name" id="victim-name" />
+            <label htmlFor="victimName">Nome da vítima</label>
+            <input
+              type="text"
+              name="victimName"
+              id="victimName"
+              onChange={(e) =>
+                setFormData({ ...formData, victimName: e.target.value })
+              }
+              value={formData.victimName}
+            />
           </fieldset>
         </div>
 
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="age">Idade</label>
-            <input type="number" name="age" id="age" />
+            <input
+              type="number"
+              name="age"
+              id="age"
+              value={formData.age}
+              onChange={(e) =>
+                setFormData({ ...formData, age: e.target.value })
+              }
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="violence-category">Violência sofrida</label>
-            <select name="violence-category" id="violence-category">
-              <option value="">Selecione uma categoria</option>
+            <label htmlFor="violenc">Violência sofrida</label>
+            <select
+              name="violenc"
+              id="violenc"
+              value={formData.violenc}
+              onChange={(e) =>
+                setFormData({ ...formData, violenc: e.target.value })
+              }
+            >
+              <option>Selecione uma categoria</option>
               {violences.map((violence) => (
                 <option key={violence} value={violence}>
                   {violence}
@@ -63,8 +135,15 @@ function NewOccurrenceForm() {
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="physical-aggression">Houve agressão física?</label>
-            <select name="physical-aggression" id="physical-aggression">
+            <label htmlFor="physicalAggression">Houve agressão física?</label>
+            <select
+              value={formData.physicalAggression}
+              name="physicalAggression"
+              id="physicalAggression"
+              onChange={(e) =>
+                setFormData({ ...formData, physicalAggression: e.target.value })
+              }
+            >
               <option value="">Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
@@ -78,26 +157,54 @@ function NewOccurrenceForm() {
         <div className="new-occurrences__form__group blocks-4">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
-            <select name="state" id="state">
-              <option value="">Selecionar</option>
+            <select
+              name="state"
+              id="state"
+              onChange={(e) =>
+                setFormData({ ...formData, state: e.target.value })
+              }
+              value={formData.state}
+            >
+              <option>Selecionar</option>
             </select>
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
-            <select name="city" id="city">
-              <option value="">Selecionar</option>
+            <select
+              name="city"
+              id="city"
+              onChange={(e) =>
+                setFormData({ ...formData, city: e.target.value })
+              }
+              value={formData.city}
+            >
+              <option>Selecionar</option>
             </select>
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="date">Data</label>
-            <input type="date" id="date" />
+            <input
+              type="date"
+              value={formData.date}
+              id="date"
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
+            />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="time">Horário</label>
-            <input type="time" id="time" />
+            <input
+              type="time"
+              value={formData.time}
+              id="time"
+              onChange={(e) =>
+                setFormData({ ...formData, time: e.target.value })
+              }
+            />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group blocks-2">
@@ -108,12 +215,24 @@ function NewOccurrenceForm() {
               name="local"
               id="local"
               placeholder="Digite o endereço"
+              value={formData.local}
+              onChange={(e) =>
+                setFormData({ ...formData, local: e.target.value })
+              }
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="establishment">Nome do estabelecimento</label>
-            <input type="text" name="establishment" id="establishment" />
+            <input
+              type="text"
+              name="establishment"
+              id="establishment"
+              value={formData.establishment}
+              onChange={(e) =>
+                setFormData({ ...formData, establishment: e.target.value })
+              }
+            />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group blocks-1">
@@ -125,6 +244,10 @@ function NewOccurrenceForm() {
               id="description"
               cols="30"
               rows="10"
+              value={formData.description}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
             ></textarea>
           </fieldset>
         </div>
@@ -166,7 +289,11 @@ function NewOccurrenceForm() {
           </label>
         </div>
         <div className="new-occurrences__form__group">
-          <button className="newOccurrence__button" type="submit">
+          <button
+            className="newOccurrence__button"
+            type="submit"
+            onClick={submitData}
+          >
             Registrar ocorrência
           </button>
         </div>
