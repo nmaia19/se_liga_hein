@@ -1,5 +1,7 @@
 import "./styles.css";
 import AboutUsImage from "./../../assets/images/aboutus__foto.png";
+import { Link } from "react-router-dom";
+
 function AboutUsHome() {
   return (
     <div className="aboutus__content">
@@ -16,7 +18,9 @@ function AboutUsHome() {
           soluta blanditiis!
         </p>
         <div className="aboutus__button">
+        <Link className="link-btn" to="/about">
           <button>Saiba mais</button>
+        </Link>
         </div>
       </div>
     </div>

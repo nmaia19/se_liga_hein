@@ -1,5 +1,7 @@
 import "./styles.css";
 import descriptionImage from "./../../assets/images/map__foto.png";
+import { Link } from "react-router-dom";
+
 function HomeDescription() {
   return (
     <div className="description__content">
@@ -9,7 +11,10 @@ function HomeDescription() {
           Breve descrição introdutória. Lorem ipsum dolor sit amet, consectetuer
           adipiscing elit, sed diam nonummy nibh
         </p>
-        <button>Saiba mais</button>
+        <Link className="link-btn" to="/login">
+          <button>Começar</button>
+        </Link>
+        
       </div>
       <div className="description__image">
         <img src={descriptionImage} alt="" />
