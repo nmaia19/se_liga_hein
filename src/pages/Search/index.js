@@ -1,6 +1,8 @@
 import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
+// import { Autocomplete } from '@react-google-maps/api'
+// import Map from '../../components/Search/Map'
 
 function Search() {
   const filters = [
@@ -26,6 +28,7 @@ function Search() {
           />
         </svg>
 
+        {/* <Autocomplete> */}
         <input
           className="search__input"
           placeholder="Digite sua busca"
@@ -34,6 +37,7 @@ function Search() {
           // value={form.name}
           // onChange={handleChange}
         />
+        {/* </Autocomplete> */}
 
         <select
           className="search__select"
@@ -59,6 +63,10 @@ function Search() {
         <Card />
         <Card />
       </div>
+
+      {/* <div className="map">
+        <Map />
+      </div> */}
       <Footer />
     </div>
   )
