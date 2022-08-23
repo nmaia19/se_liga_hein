@@ -48,7 +48,7 @@ function NavBar() {
             </Link>
             {open && (
               <div className="nav__link--hover">
-                <a onMouseEnter={() => setOpen(true)} href="/myoccurrences">
+                <a onMouseEnter={() => setOpen(true)} href="/my-occurrences">
                   Minhas ocorrências
                 </a>
                 <div className="nav__link--hover-divider" />

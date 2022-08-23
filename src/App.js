@@ -20,7 +20,7 @@ function App() {
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/search" element={<Search />} />
         <Route path="/new-occurrence" element={<NewOccurrence />}/>
-        <Route path="/myoccurrences" element={<MyOccurrences />} />
+        <Route path="/my-occurrences" element={<MyOccurrences />} />
       </Routes>
     </div>
   );

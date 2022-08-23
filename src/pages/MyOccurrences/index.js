@@ -4,7 +4,7 @@ import "./styles.css";
 function MyOccurrences() {
   const [occorrences, setOccurrences] = useState([]);
   const [tipodeviolencia, setTipodeviolencia] = useState([]);
-  
+
   const violences = [
     "Racismo",
     "Xenofobia",
@@ -27,14 +27,15 @@ function MyOccurrences() {
 
   const handleSelect = (event) => {
     setTipodeviolencia(event.target.value);
-    setOccurrences(
-      occorrences.filter((occurrence) => {
-        return occurrence === tipodeviolencia;
-      })
-    );
+    const filteredOccurrences = occorrences.filter((occurrence) => {
+      return occurrence.violenc == tipodeviolencia;
+    });
+
+    if (filteredOccurrences.length > 0) {
+      setOccurrences(filteredOccurrences);
+    }
   };
 
-  console.log(occorrences);
   return (
     <div>
       <h1>Minhas Ocorrências</h1>

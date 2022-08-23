@@ -3,8 +3,10 @@ import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewOccurrenceForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
     name: "",
     age: 0,
@@ -40,7 +42,6 @@ function NewOccurrenceForm() {
   ];
 
   function submitData(evt) {
-    evt.preventDefault();
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -49,7 +50,9 @@ function NewOccurrenceForm() {
     fetch(
       "https://6304f02a697408f7edbe9e13.mockapi.io/occorrences",
       requestOptions
-    ).then((response) => response.json());
+    )
+      .then((response) => response.json())
+      .then(() => navigate("/my-occurrences"));
   }
 
   // UF and City data
