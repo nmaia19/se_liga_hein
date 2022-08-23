@@ -4,7 +4,9 @@ import "./styles.css";
 function NavBar() {
   return (
     <div className="navbar__content">
-      <div className="logo">Se liga, Hein</div>
+      <Link className="logo" to="/">
+        Se liga, Hein
+      </Link>
       <nav className="nav">
         <ul className="nav__ul">
           <li>
