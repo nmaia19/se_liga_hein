@@ -1,34 +1,58 @@
+.my__occurrence-h1 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin: 5% auto;
+    text-align: center;
+}
+
 .filters {
     width: 100%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
     display: flex;
     justify-content: center;
 }
 
-.filter{
+.filter {
     width: 30%;
 }
+
 .card__occurrence {
     width: 607px;
     background: #ffffff;
-    height: 113px;
+    height: 101px;
     background: #FFFFFF;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
 
 .card__occurrence--headercard {
-    width: 100%;
     display: flex;
+    margin-top: 13px;
+    margin-inline: 21px;
     justify-content: space-between;
+}
+
+.name {
+    margin-top: 2%;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.violence {
+    font-weight: 600;
+    color: #ff6464;
+    margin-top: 2%;
 }
 
 .card__occurrence--address {
     width: 100%;
     font-size: 16px;
-    line-height: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     color: #000000;
 }
@@ -43,14 +67,30 @@
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
+    background: #480ca8;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 2%;
 }
 
 .main__cards {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .main__cards--div {
     margin: auto;
+}
+
+.card__info {
+    margin-left: 21px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
 }

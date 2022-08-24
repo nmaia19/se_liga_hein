@@ -1,4 +1,4 @@
-import './styles.css'
+import "./styles.css";
 
 export default function Card() {
   return (
@@ -26,5 +26,5 @@ export default function Card() {
       </div>
       <button className="read-more">Ler mais</button>
     </div>
-  )
+  );
 }
