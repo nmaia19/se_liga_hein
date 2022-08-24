@@ -1,0 +1,64 @@
+.search__cards {
+  margin: 82px 106px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-form {
+  width: 802px;
+  margin-left: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.search-form svg {
+  position: absolute;
+  left: 17px;
+}
+
+.search__input {
+  width: 454px;
+  height: 61px;
+
+  padding-left: 71px;
+  border-style: none;
+  background: #eaeaea;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.search__select {
+  margin: 0;
+  width: 153px;
+  height: 61px;
+
+  text-align: left;
+  background: #480ca8;
+  border-radius: 0px 40px 40px 0px;
+  color: white;
+}
+
+.search__btn {
+  width: 141px;
+  height: 58px;
+
+  margin-left: 27px;
+
+  background: #ffffff;
+  border-radius: 40px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-align: center;
+
+  color: #480ca8;
+}

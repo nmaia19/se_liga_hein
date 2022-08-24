@@ -1,0 +1,56 @@
+.aboutus__content {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+}
+
+.aboutus__image {
+  width: 50%;
+  margin: auto;
+}
+
+.aboutus__image img {
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+}
+
+.aboutus__text {
+  width: 40%;
+  text-align: justify;
+  font-family: 'Montserrat';
+  margin: 5% 10% 5% 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.aboutus__text h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 106.02%;
+  /* or 42px */
+
+  color: #240864;
+}
+
+.aboutus__button {
+  display: flex;
+  justify-content: end;
+  /* margin: 10% 0; */
+}
+
+.aboutus__button .button {
+  width: 332px;
+  height: 68px;
+  border: none;
+  background: #480ca8;
+  border-radius: 40px;
+
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: white;
+}
