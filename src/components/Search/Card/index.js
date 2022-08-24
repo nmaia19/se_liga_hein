@@ -1,6 +1,6 @@
 import './styles.css'
 
-export default function Card() {
+export default function Card({ place }) {
   return (
     <div className="card">
       <div className="tags">
@@ -20,9 +20,7 @@ export default function Card() {
             fill="black"
           />
         </svg>
-        <h4 className="info__address">
-          Casa do Espeto - Av. Washington Soares, 1322, Fortaleza-CE
-        </h4>
+        <h4 className="info__address">{place.address}</h4>
       </div>
       <button className="read-more">Ler mais</button>
     </div>

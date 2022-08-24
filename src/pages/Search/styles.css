@@ -1,4 +1,4 @@
-.main__container {
+.main__content {
   display: flex;
   justify-content: center;
   margin-block: 82px;
@@ -8,7 +8,6 @@
 .search__cards {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .search-form {

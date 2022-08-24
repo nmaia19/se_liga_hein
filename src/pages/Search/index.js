@@ -3,6 +3,7 @@ import Footer from '../../components/Footer'
 import './styles.css'
 // import { Autocomplete } from '@react-google-maps/api'
 import Map from '../../components/Search/Map'
+import { useState } from 'react'
 
 function Search() {
   const filters = [
@@ -11,6 +12,17 @@ function Search() {
     'Estabelecimento',
     'Tipo de Violência'
   ]
+  const places = [
+    { address: 'Casa do Espeto - Av. Washington Soares, 1322, Fortaleza-CE' },
+    { address: 'Casa do Espeto2 - Av. Washington Soares, 1322, Fortaleza-CE' },
+    { address: 'Casa do Espeto3 - Av. Washington Soares, 1322, Fortaleza-CE' },
+    { address: 'Casa do Espeto4 - Av. Washington Soares, 1322, Fortaleza-CE}' }
+  ]
+  const [filter, setFilter] = useState('clear')
+
+  const handleSelectChange = e => {
+    setFilter(e.target.value)
+  }
 
   return (
     <div>
@@ -40,9 +52,9 @@ function Search() {
         <select
           className="search__select"
           name="category"
-          // onChange={handleChange}
+          onChange={handleSelectChange}
         >
-          <option value="">Filtrar Busca</option>
+          <option value="clear">Filtrar Busca</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
               {filter}
@@ -54,19 +66,20 @@ function Search() {
           Buscar
         </button>
       </form>
-      <div className="main__container">
-        <div className="search__cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+      <div className="main__content">
+        <div>
+          {places?.map((place, i) => (
+            <div className="search__cards" key={i}>
+              <Card place={place} />
+            </div>
+          ))}
         </div>
 
         <div className="map">
           <Map />
         </div>
       </div>
-        <Footer />
+      <Footer />
     </div>
   )
 }
