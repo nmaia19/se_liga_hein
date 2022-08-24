@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+.mapContainer iframe {
+  width: 330px;
+  height: 513px;
+  border: 0;
+}
+
 .markerContainer {
   position: absolute;
   transform: translate(-50%, -50%);

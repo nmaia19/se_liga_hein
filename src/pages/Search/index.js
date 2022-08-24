@@ -54,18 +54,19 @@ function Search() {
           Buscar
         </button>
       </form>
+      <div className="main__container">
+        <div className="search__cards">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
 
-      <div className="search__cards">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <div className="map">
+          <Map />
+        </div>
       </div>
-
-      <div className="map">
-        <Map />
-      </div>
-      <Footer />
+        <Footer />
     </div>
   )
 }
