@@ -13,7 +13,8 @@
 
 .search-form {
   width: 802px;
-  margin: auto;
+  margin-top: 82px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: center;
