@@ -3,43 +3,45 @@ import Footer from '../../components/Footer'
 import './styles.css'
 import Map from '../../components/Search/Map'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 function Search() {
   const filters = ['Cidade', 'Estabelecimento', 'Tipo de Violência']
 
-  const places = [
-    {
-      name: 'Nay',
-      victim: 'Sim',
-      victimName: 'coisinha',
-      age: '20',
-      violence: 'Xenofobia',
-      physicalAggression: 'Não',
-      state: 'PB',
-      city: '2507507',
-      date: '2022-08-25',
-      time: '11:56',
-      local: 'R. Franca Filho, 96 - Manaíra, João Pessoa - PB',
-      establishment: 'Hao',
-      description: 'Foi babado e destruição'
-    },
-    {
-      name: 'Anônimo',
-      victim: 'Não',
-      victimName: 'tiaga',
-      age: '30',
-      violence: 'LGBTfobia',
-      physicalAggression: 'Sim',
-      state: 'PB',
-      city: '2504009',
-      date: '2022-08-17',
-      time: '03:00',
-      local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
-      establishment: 'La Suissa',
-      description: 'briga e confusão, coxinha pra todo lado'
-    }
-  ]
+  // const places = [
+  //   {
+  //     name: 'Nay',
+  //     victim: 'Sim',
+  //     victimName: 'coisinha',
+  //     age: '20',
+  //     violence: 'Xenofobia',
+  //     physicalAggression: 'Não',
+  //     state: 'PB',
+  //     city: '2507507',
+  //     date: '2022-08-25',
+  //     time: '11:56',
+  //     local: 'R. Franca Filho, 96 - Manaíra, João Pessoa - PB',
+  //     establishment: 'Hao',
+  //     description: 'Foi babado e destruição'
+  //   },
+  //   {
+  //     name: 'Anônimo',
+  //     victim: 'Não',
+  //     victimName: 'tiaga',
+  //     age: '30',
+  //     violence: 'LGBTfobia',
+  //     physicalAggression: 'Sim',
+  //     state: 'PB',
+  //     city: '2504009',
+  //     date: '2022-08-17',
+  //     time: '03:00',
+  //     local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
+  //     establishment: 'La Suissa',
+  //     description: 'briga e confusão, coxinha pra todo lado'
+  //   }
+  // ]
 
+  const [places, setPlaces] = useState([])
   const [filter, setFilter] = useState('clear')
   const [input, setInput] = useState('')
   const [filteredPlaces, setFilteredPlaces] = useState([])
@@ -68,12 +70,47 @@ function Search() {
           place.violence.toLowerCase().includes(input.toLowerCase())
         )
       )
+    } else if (filter === 'clear' && input !== '') {
+      let ctrArr = []
+      places.forEach((place, index) => {
+        for (const property in place) {
+          if (
+            place[property].toLowerCase().includes(input.toLowerCase()) &&
+            ctrArr.includes(places[index]) === false
+          ) {
+            ctrArr.push(places[index])
+          }
+        }
+      })
+      setFilteredPlaces(ctrArr)
     } else if (input === '') {
       setFilteredPlaces(places)
     }
+
+    setInput('')
   }
 
-  useEffect(() => setFilteredPlaces(places), [])
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('occurrences'))
+    if (items) {
+      setPlaces(items)
+      setFilteredPlaces(items)
+    }
+  }, [])
+
+  // useEffect(() => setFilteredPlaces(places), [])
+
+  // useEffect(() => {
+  //   const getPlaces = async () => {
+  //     const response = await axios.get(
+  //       'https://6304f02a697408f7edbe9e13.mockapi.io/occorrences'
+  //     )
+  //     console.log(response.data.results)
+  //     setPlaces(response.data.results)
+  //     setFilteredPlaces(response.data.results)
+  //   }
+  //   getPlaces()
+  // }, [])
 
   return (
     <div>
