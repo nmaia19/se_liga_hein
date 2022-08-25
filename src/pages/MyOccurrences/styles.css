@@ -3,7 +3,7 @@
     font-weight: 700;
     font-size: 48px;
     color: #FFFFFF;
-    margin: 5% auto;
+    margin: 3% auto;
     text-align: center;
 }
 
@@ -13,7 +13,6 @@
     display: flex;
     justify-content: center;
     font-family: 'Montserrat';
-
 }
 
 .filter {
@@ -28,7 +27,6 @@
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     font-family: 'Montserrat';
-
 }
 
 .card__occurrence--headercard {
@@ -39,7 +37,7 @@
 }
 
 .name {
-    margin-top: 2%;
+    margin: 2% 0;
     font-style: normal;
     font-size: 12px;
     line-height: 15px;
@@ -49,7 +47,7 @@
 .violence {
     font-weight: 600;
     color: #ff6464;
-    margin-top: 2%;
+    margin: 2% 0;
 }
 
 .card__occurrence--address {
@@ -83,19 +81,11 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 50vh;
+    margin-bottom: 10%;
 }
 
 .main__cards--div {
     margin: auto;
 }
 
-.card__info {
-    margin-left: 21px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-}
