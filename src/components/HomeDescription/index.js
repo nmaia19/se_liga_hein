@@ -10,7 +10,7 @@ function HomeDescription() {
           Breve descrição introdutória. Lorem ipsum dolor sit amet, consectetuer
           adipiscing elit, sed diam nonummy nibh
         </p>
-        <button>Saiba mais</button>
+        <button>Começar</button>
       </div>
       <div className="description__image">
         <img src={descriptionImage} alt="" />

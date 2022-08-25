@@ -12,6 +12,8 @@
     margin-bottom: 3%;
     display: flex;
     justify-content: center;
+    font-family: 'Montserrat';
+
 }
 
 .filter {
@@ -25,6 +27,8 @@
     background: #FFFFFF;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    font-family: 'Montserrat';
+
 }
 
 .card__occurrence--headercard {
@@ -58,6 +62,7 @@
 }
 
 .card__occurrence--button {
+    font-family: 'Montserrat';
     margin: auto;
     width: 90px;
     height: 21px;
