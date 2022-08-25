@@ -4,8 +4,8 @@ export default function Card({ place }) {
   return (
     <div className="card">
       <div className="tags">
-        <p>Anônimo</p>
-        <p className="level">Violência</p>
+        <p>{place.name}</p>
+        <p className="level">{place.violence}</p>
       </div>
       <div className="card__info">
         <svg
@@ -20,7 +20,7 @@ export default function Card({ place }) {
             fill="black"
           />
         </svg>
-        <h4 className="info__address">{place.address}</h4>
+        <h4 className="info__address">{`${place.establishment} - ${place.local}`}</h4>
       </div>
       <button className="read-more">Ler mais</button>
     </div>

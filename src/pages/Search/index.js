@@ -1,32 +1,83 @@
 import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
-// import { Autocomplete } from '@react-google-maps/api'
 import Map from '../../components/Search/Map'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Search() {
-  const filters = [
-    'Cidade',
-    'Próximos a mim',
-    'Estabelecimento',
-    'Tipo de Violência'
-  ]
+  const filters = ['Cidade', 'Estabelecimento', 'Tipo de Violência']
+
   const places = [
-    { address: 'Casa do Espeto - Av. Washington Soares, 1322, Fortaleza-CE' },
-    { address: 'Casa do Espeto2 - Av. Washington Soares, 1322, Fortaleza-CE' },
-    { address: 'Casa do Espeto3 - Av. Washington Soares, 1322, Fortaleza-CE' },
-    { address: 'Casa do Espeto4 - Av. Washington Soares, 1322, Fortaleza-CE}' }
+    {
+      name: 'Nay',
+      victim: 'Sim',
+      victimName: 'coisinha',
+      age: '20',
+      violence: 'Xenofobia',
+      physicalAggression: 'Não',
+      state: 'PB',
+      city: '2507507',
+      date: '2022-08-25',
+      time: '11:56',
+      local: 'R. Franca Filho, 96 - Manaíra, João Pessoa - PB',
+      establishment: 'Hao',
+      description: 'Foi babado e destruição'
+    },
+    {
+      name: 'Anônimo',
+      victim: 'Não',
+      victimName: 'tiaga',
+      age: '30',
+      violence: 'LGBTfobia',
+      physicalAggression: 'Sim',
+      state: 'PB',
+      city: '2504009',
+      date: '2022-08-17',
+      time: '03:00',
+      local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
+      establishment: 'La Suissa',
+      description: 'briga e confusão, coxinha pra todo lado'
+    }
   ]
+
   const [filter, setFilter] = useState('clear')
+  const [input, setInput] = useState('')
+  const [filteredPlaces, setFilteredPlaces] = useState([])
 
   const handleSelectChange = e => {
     setFilter(e.target.value)
   }
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (filter === 'Cidade') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.local.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (filter === 'Estabelecimento') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.establishment.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (filter === 'Tipo de Violência') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.violence.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (input === '') {
+      setFilteredPlaces(places)
+    }
+  }
+
+  useEffect(() => setFilteredPlaces(places), [])
+
   return (
     <div>
-      <form onSubmit="" className="search-form">
+      <form onSubmit={handleSubmit} className="search-form">
         <svg
           width="25"
           height="25"
@@ -45,8 +96,8 @@ function Search() {
           placeholder="Digite sua busca"
           type="text"
           name="name"
-          // value={form.name}
-          // onChange={handleChange}
+          onChange={e => setInput(e.target.value)}
+          value={input}
         />
 
         <select
@@ -68,7 +119,7 @@ function Search() {
       </form>
       <div className="main__content">
         <div>
-          {places?.map((place, i) => (
+          {filteredPlaces?.map((place, i) => (
             <div className="search__cards" key={i}>
               <Card place={place} />
             </div>
