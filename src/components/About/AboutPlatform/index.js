@@ -1,6 +1,6 @@
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import AboutUsImage from "./../../../assets/images/aboutus__foto.png";
+import AboutUsImage from "./../../../assets/images/megaphone.png";
 
 function AboutPlatform() {
   return (

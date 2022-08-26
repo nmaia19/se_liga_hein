@@ -1,5 +1,5 @@
 import "./styles.css";
-import descriptionImage from "./../../../assets/images/aboutus_02.png";
+import descriptionImage from "../../../assets/images/people.webp";
 
 function AboutDescription() {
   return (
