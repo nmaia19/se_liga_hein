@@ -62,3 +62,7 @@
     text-align: center;
     color: #FFFFFF;
 }
+
+.aboutus__text button:hover {
+    background-color: #3C0B8C;
+}
