@@ -1,6 +1,8 @@
 import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
+// import { Autocomplete } from '@react-google-maps/api'
+import Map from '../../components/Search/Map'
 
 function Search() {
   const filters = [
@@ -52,14 +54,19 @@ function Search() {
           Buscar
         </button>
       </form>
+      <div className="main__container">
+        <div className="search__cards">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
 
-      <div className="search__cards">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <div className="map">
+          <Map />
+        </div>
       </div>
-      <Footer />
+        <Footer />
     </div>
   )
 }

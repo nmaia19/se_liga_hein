@@ -9,7 +9,8 @@ function LoginMain() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSignin = () => {
+  const handleSignin = (e) => {
+    e.preventDefault()
     const LocalPassword = localStorage.getItem("password");
     const LocalEmail = localStorage.getItem("email");
     if (!email | !password) {
@@ -32,8 +33,6 @@ function LoginMain() {
         title: "Login efetuado com sucesso!",
         showConfirmButton: false,
       });
-      navigate("/");
-      window.location.reload();
     }
   };
 

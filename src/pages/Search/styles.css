@@ -1,5 +1,11 @@
+.main__container {
+  display: flex;
+  justify-content: center;
+  margin-block: 82px;
+  gap: 105px;
+}
+
 .search__cards {
-  margin: 82px 106px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -7,7 +13,7 @@
 
 .search-form {
   width: 802px;
-  margin-left: 106px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,3 +68,8 @@
 
   color: #480ca8;
 }
+
+/* 
+.swal2-title {
+  font-family: 'Montserrat';
+} */

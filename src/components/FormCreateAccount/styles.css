@@ -14,7 +14,11 @@
     color: #FFFFFF;
 }
 
-.form{
+.swal2-title {
+    font-family: 'Montserrat';
+}
+
+.form {
     width: 972px;
     height: 934px;
 
@@ -54,7 +58,7 @@
 }
 
 .form-left__fieldset,
-.form-right__fieldset{
+.form-right__fieldset {
     width: 100%;
 
     display: flex;
@@ -104,11 +108,17 @@
     height: 48.56px;
 
     margin-top: 5px;
-    
-    background: #FFFFFF;
-    border-radius: 5px;    
-}
 
+    background: #FFFFFF;
+    border-radius: 5px;
+
+    padding-left: 2%;
+    font-family: 'Montserrat', sans-serif;
+}
+.fieldset__input::placeholder {
+    color: silver;
+    font-size: 16px;
+}
 .fieldset__input-date {
     all: unset;
 
@@ -119,16 +129,17 @@
 
     color: #8A8A8A;
     background: #FFFFFF;
-    border-radius: 5px; 
+    border-radius: 5px;
 
     font-family: 'Montserrat';
-    font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 
     display: flex;
     align-items: center;
+
+    padding: 0 2%;
 }
 
 .fieldset__input-select {
@@ -139,12 +150,11 @@
 
     color: #8A8A8A;
     background: #FFFFFF;
-    border-radius: 6px; 
+    border-radius: 6px;
 
     border-color: #FFFFFF;
 
     font-family: 'Montserrat';
-    font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -196,7 +206,8 @@
 .fieldset-checkbox__text {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;margin-bottom: 40px;
+    font-weight: 400;
+    margin-bottom: 40px;
     font-size: 14px;
     line-height: 17px;
 
@@ -230,4 +241,3 @@
 .btn:hover {
     background: #500ebb;
 }
-

@@ -1,5 +1,6 @@
 import "./styles.css";
 import AboutUsImage from "./../../assets/images/aboutus__foto.png";
+import { NavLink } from "react-router-dom";
 
 function AboutUsHome() {
   return (
@@ -10,14 +11,20 @@ function AboutUsHome() {
       <div className="aboutus__text">
         <h1>Sobre nós</h1>
         <p>
-          Texto de apoio complementar descrevendo melhor o serviço do site e
-          como funciona. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Pariatur quisquam neque ullam vel nihil autem sunt dicta
-          commodi, facere harum cumque similique laborum deleniti voluptate
-          soluta blanditiis!
+          O Se Liga, hein te deixa ligado nos estabelecimentos onde houveram
+          registros de quaisquer tipos de violências ao cliente durante o
+          período de permanência no recinto. Nossa plataforma também permite que
+          você registre casos de violência sofridos ou presenciados por você em
+          qualquer lugar. Com uma simples pesquisa você pode evitar ir a locais
+          com histórico de hostilidade, discriminação, intimidação e desrespeito
+          aos clientes.
         </p>
         <div className="aboutus__button">
-          <button>Saiba mais</button>
+          <button>
+            <NavLink className="aboutus__button__link" to="/about">
+              Saiba mais
+            </NavLink>
+          </button>
         </div>
       </div>
     </div>
