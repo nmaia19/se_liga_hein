@@ -48,7 +48,7 @@ export default function FormCreateAccount() {
           <div className="personal-data__form-left">
             <fieldset className="form-left__fieldset">
               <label className="fieldset__title" for="name">
-                Nome Completo
+                Nome completo
               </label>
               <input className="fieldset__input" type="text" name="name" />
             </fieldset>
