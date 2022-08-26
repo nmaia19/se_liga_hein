@@ -35,7 +35,8 @@ function AboutPlatform() {
           </ul>
         </p>
         <div className="aboutus__button">
-          <button className="button">Procurar ocorrências</button>
+          <button className="button"> <NavLink className="aboutus__button__link" to="/search">Procurar ocorrências</NavLink>
+        </button>
         </div>
       </div>
     </div>
