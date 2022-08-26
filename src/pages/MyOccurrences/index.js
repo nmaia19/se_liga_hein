@@ -35,7 +35,7 @@ function MyOccurrences() {
       return occurrence.violenc === tipodeviolencia;
     });
     setFilteredOccurrences(occorrencesFilter);
-  }, [tipodeviolencia]);
+  }, [tipodeviolencia,occorrences]);
 
   return (
     <div>
