@@ -318,7 +318,7 @@ function NewOccurrenceForm() {
         </div>
         {warning.show && <span className="warning">{warning.message}</span>}
         <div className="new-occurrences__form__group">
-          <button type="submit">Registrar ocorrência</button>
+          <button className="new-occurrences__btn"type="submit">Registrar ocorrência</button>
         </div>
       </form>
     </div>

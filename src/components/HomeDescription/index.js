@@ -7,7 +7,7 @@ function HomeDescription() {
       <div className="description__text">
         <h1>Se liga, hein</h1>
         <p>
-        Pesquise a reputação de estabelecimentos ou faça o relato de situações de violência sofridas ou presenciadas por você.
+        Pesquise a reputação de estabelecimentos ou relate situações de violência sofridas ou presenciadas por você.
         </p>
         <button>Começar</button>
       </div>

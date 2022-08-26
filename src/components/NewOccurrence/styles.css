@@ -113,13 +113,13 @@ label {
 
 #terms-checkbox,
 select,
-button,
+.new-occurrences__btn,
 option {
     cursor: pointer;
 }
 
 /* button */
-button {
+.new-occurrences__btn {
     background: #480ca8;
     border: none;
     border-radius: 40px;
@@ -132,7 +132,7 @@ button {
     width: 30%;
 }
 
-button:hover {
+.new-occurrences__btn:hover {
     transform: scale(1.02);
     transition: 0.3s ease;
 }
