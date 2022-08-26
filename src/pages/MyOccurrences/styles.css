@@ -21,12 +21,16 @@
 
 .card__occurrence {
     width: 607px;
-    background: #ffffff;
     height: 101px;
     background: #FFFFFF;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     font-family: 'Montserrat';
+    margin: 2%;
+}
+
+.card__occurrence1 {
+    width: 500px;
 }
 
 .card__occurrence--headercard {
@@ -74,7 +78,6 @@
     box-shadow: none;
     font-size: 12px;
     line-height: 15px;
-    margin-top: 2%;
 }
 
 .main__cards {
@@ -89,3 +92,28 @@
     margin: auto;
 }
 
+.card__occurrence__actions {
+    display: flex;
+}
+
+.card__occurrence__actions button {
+    background-color: transparent;
+    border: transparent;
+    margin: 50% 15%;
+}
+
+.card__occurrence__actions img {
+    width: 30px;
+}
+
+
+.card__occurrence--update {
+    width: 60px;
+    background: #4361EE
+}
+
+.card__occurrence--delete {
+    background: #FF6464;
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+}
