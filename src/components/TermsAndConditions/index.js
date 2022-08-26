@@ -1,6 +1,6 @@
-export default function TermsAndConditions() {
+export default function TermsAndConditions({className}) {
   return (
-    <textarea className="fieldset__text" rows="1" cols="1000" disabled>
+    <textarea className={className} rows="1" cols="1000" disabled>
       TERMOS DE SERVIÇO - VISÃO GERAL. Este site é operado pela Se liga, hein.
       Em todo o site, os termos "nós", "nós" e "nosso" se referem à Se liga,
       hein. Se liga, hein oferece este site, incluindo todas as informações,
@@ -270,7 +270,7 @@ export default function TermsAndConditions() {
       publicação de quaisquer alterações a estes Termos de serviço constitui
       aceitação dessas alterações. SEÇÃO 20 - INFORMAÇÕES DE CONTATO Perguntas
       sobre os Termos de serviço devem ser enviadas para nós em
-      seligahein[@gmail.com](mailto:webdevyu@gmail.com).
+      seligahein@gmail.com.
     </textarea>
   );
 }
