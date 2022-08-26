@@ -7,10 +7,9 @@ function HomeDescription() {
       <div className="description__text">
         <h1>Se liga,hein</h1>
         <p>
-          Breve descrição introdutória. Lorem ipsum dolor sit amet, consectetuer
-          adipiscing elit, sed diam nonummy nibh
+        Pesquise a reputação dos estabelecimentos ou faça o relato de situações de violência sofridas ou presenciadas por você.
         </p>
-        <button>Saiba mais</button>
+        <button>Começar</button>
       </div>
       <div className="description__image">
         <img src={descriptionImage} alt="" />
