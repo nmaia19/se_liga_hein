@@ -60,9 +60,13 @@
     line-height: 29px;
     font-weight: 900;
     text-align: center;
-    color: #FFFFFF;
+   
 }
 
 .aboutus__text button:hover {
     background-color: #3C0B8C;
+}
+
+.aboutus__button__link {
+    color: #FFFFFF;
 }

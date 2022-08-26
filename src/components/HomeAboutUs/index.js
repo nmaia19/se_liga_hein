@@ -1,5 +1,6 @@
 import "./styles.css";
 import AboutUsImage from "./../../assets/images/aboutus__foto.png";
+import { NavLink } from "react-router-dom";
 
 function AboutUsHome() {
   return (
@@ -19,7 +20,11 @@ function AboutUsHome() {
           aos clientes.
         </p>
         <div className="aboutus__button">
-          <button>Saiba mais</button>
+          <button>
+            <NavLink className="aboutus__button__link" to="/about">
+              Saiba mais
+            </NavLink>
+          </button>
         </div>
       </div>
     </div>
