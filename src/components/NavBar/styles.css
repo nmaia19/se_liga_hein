@@ -45,3 +45,7 @@
     text-align: center;
     color: #480CA8;
 }
+
+.nav__link--button:hover {
+    background-color: #EAEAEA;
+}

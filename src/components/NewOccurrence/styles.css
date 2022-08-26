@@ -133,8 +133,9 @@ option {
 }
 
 .new-occurrences__btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     transition: 0.3s ease;
+    background-color: #3C0B8C;
 }
 
 .warning {

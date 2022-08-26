@@ -49,3 +49,6 @@
     font-weight: 900;
     margin-top: 8%;
 }
+.description__text button:hover {
+    background-color: #3C0B8C;
+}

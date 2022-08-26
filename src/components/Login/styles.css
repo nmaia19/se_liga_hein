@@ -96,3 +96,6 @@
     text-align: center;
     color: #FFFFFF;
 }
+.login__button button:hover {
+    background-color: #3C0B8C;
+}
