@@ -111,8 +111,14 @@
 
     background: #FFFFFF;
     border-radius: 5px;
-}
 
+    padding-left: 2%;
+    font-family: 'Montserrat', sans-serif;
+}
+.fieldset__input::placeholder {
+    color: silver;
+    font-size: 16px;
+}
 .fieldset__input-date {
     all: unset;
 
@@ -126,13 +132,14 @@
     border-radius: 5px;
 
     font-family: 'Montserrat';
-    font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
 
     display: flex;
     align-items: center;
+
+    padding: 0 2%;
 }
 
 .fieldset__input-select {
@@ -148,7 +155,6 @@
     border-color: #FFFFFF;
 
     font-family: 'Montserrat';
-    font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;

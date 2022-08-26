@@ -4,6 +4,7 @@ import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import TermsAndConditions from "../TermsAndConditions";
 
 function NewOccurrenceForm() {
   const navigate = useNavigate();
@@ -302,30 +303,7 @@ function NewOccurrenceForm() {
             <label htmlFor="terms" className="terms-label">
               Termos e condições
             </label>
-            <textarea name="terms" id="terms" cols="30" rows="10" readOnly>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae pariatur aspernatur dolor sapiente laudantium.
-              Nesciunt molestias porro quaerat recusandae labore, enim iusto
-              delectus quod saepe eveniet minima aliquam, eaque est. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Modi corrupti nulla
-              omnis ducimus deleniti, architecto expedita facere consectetur
-              quae culpa sed libero similique error ipsum? Vero qui vel sit
-              reiciendis! Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Expedita repellat libero nulla ab accusantium id excepturi
-              voluptatum, corporis asperiores debitis enim porro voluptate
-              quibusdam officia eligendi. Consequuntur hic voluptatem ipsum.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-              obcaecati aperiam suscipit eveniet, eos assumenda blanditiis
-              maxime debitis expedita eligendi delectus, magnam quia voluptas
-              impedit accusamus iusto iste fuga temporibus. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Qui deleniti ipsum
-              corporis! Impedit vero labore deleniti, eligendi temporibus
-              aliquam distinctio ut officiis ipsam nemo eveniet quasi in quia
-              atque neque? Lorem ipsum dolor, sit amet consectetur adipisicing
-              elit. Saepe asperiores provident ex quis debitis laudantium et
-              recusandae quae, rerum quia porro numquam nihil dignissimos fuga
-              similique architecto possimus. Aliquid, ab!
-            </textarea>
+           <TermsAndConditions className="new-occurrences__terms"/>
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
@@ -340,7 +318,7 @@ function NewOccurrenceForm() {
         </div>
         {warning.show && <span className="warning">{warning.message}</span>}
         <div className="new-occurrences__form__group">
-          <button type="submit">Registrar ocorrência</button>
+          <button className="new-occurrences__btn"type="submit">Registrar ocorrência</button>
         </div>
       </form>
     </div>
