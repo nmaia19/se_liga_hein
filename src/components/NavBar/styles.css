@@ -50,8 +50,14 @@
     line-height: 22px;
     text-align: center;
     color: #480CA8;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nav__link--button:hover {
     background-color: #EAEAEA;
+}
+
+.navlink__button.active .nav__link--button {
+   background-color: #B5179E;
+   color: #fff;
 }

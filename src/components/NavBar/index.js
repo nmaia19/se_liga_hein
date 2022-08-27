@@ -50,9 +50,9 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/new-occurrence">
-              <button className="nav__link--button">Criar Ocorrência</button>
-            </NavLink>
+            
+          <NavLink className="navlink__button" to="/new-occurrence"> <button className="nav__link--button">Criar Ocorrência </button> </NavLink>
+     
           </li>
         </ul>
       </nav>
