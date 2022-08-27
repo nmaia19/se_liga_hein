@@ -1,6 +1,7 @@
 import "./styles.css";
 import AboutUsImage from "./../../assets/images/aboutus__foto.png";
 import { Link } from "react-router-dom";
+import { ScrollToTop } from "../ScrollToTop/Scroll";
 
 function AboutUsHome() {
   return (
@@ -20,7 +21,7 @@ function AboutUsHome() {
           aos clientes.
         </p>
         <div className="aboutus__button">
-          <button>
+          <button onClick={ScrollToTop("/about")}>
             <Link className="aboutus__button__link" to="/about">
               Saiba mais
             </Link>
