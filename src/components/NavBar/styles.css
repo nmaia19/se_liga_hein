@@ -35,7 +35,10 @@
     color: #FFFFFF;
     cursor: pointer;
 }
-
+.nav__link.active {
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+}
 .nav__link--button {
     margin: 0 5rem 0 1rem;
     width: 195px;
