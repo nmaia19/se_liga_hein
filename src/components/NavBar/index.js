@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
+import logo from "../../assets/images/logo.png";
 
 function NavBar() {
-  const [logged, setLogged] = useState(false);
+  const navigate = useNavigate();
 
+  const [logged, setLogged] = useState(false);
   useEffect(() => {
     var item = localStorage.getItem("email");
     console.log(localStorage.getItem("email"));
@@ -18,8 +20,13 @@ function NavBar() {
 
   return (
     <div className="navbar__content">
-      <div className="logo">Se liga, Hein</div>
-      <nav className="nav">
+      <img
+        className="logo"
+        src={logo}
+        alt="Se liga, hein"
+        onClick={() => navigate("/")}
+      />
+      <nav className="nav" id="nav">
         <ul className="nav__ul">
           <li>
             <Link className="nav__link" to="/">
