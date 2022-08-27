@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
+import { useLoadScript, GoogleMap, MarkerF } from '@react-google-maps/api';
 
 
 const Map = () => {
@@ -35,7 +35,7 @@ const Map = () => {
         zoom={14}
         mapContainerStyle={{width: '330px', height: '513px'}}
         >
-          <Marker position={coordinates}/>
+          <MarkerF position={coordinates}/>
         </GoogleMap>
     </div>
   )

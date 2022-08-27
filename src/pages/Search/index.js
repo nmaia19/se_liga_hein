@@ -1,47 +1,67 @@
 import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
-import Map from '../../components/Search/Map'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import Swal from 'sweetalert2'
 
 function Search() {
   const filters = ['Cidade', 'Estabelecimento', 'Tipo de Violência']
 
-  // const places = [
-  //   {
-  //     name: 'Nay',
-  //     victim: 'Sim',
-  //     victimName: 'coisinha',
-  //     age: '20',
-  //     violence: 'Xenofobia',
-  //     physicalAggression: 'Não',
-  //     state: 'PB',
-  //     city: '2507507',
-  //     date: '2022-08-25',
-  //     time: '11:56',
-  //     local: 'R. Franca Filho, 96 - Manaíra, João Pessoa - PB',
-  //     establishment: 'Hao',
-  //     description: 'Foi babado e destruição'
-  //   },
-  //   {
-  //     name: 'Anônimo',
-  //     victim: 'Não',
-  //     victimName: 'tiaga',
-  //     age: '30',
-  //     violence: 'LGBTfobia',
-  //     physicalAggression: 'Sim',
-  //     state: 'PB',
-  //     city: '2504009',
-  //     date: '2022-08-17',
-  //     time: '03:00',
-  //     local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
-  //     establishment: 'La Suissa',
-  //     description: 'briga e confusão, coxinha pra todo lado'
-  //   }
-  // ]
+  const places = [
+    {
+      name: 'Nay',
+      victim: 'Sim',
+      victimName: 'coisinha',
+      age: '20',
+      violence: 'Xenofobia',
+      physicalAggression: 'Não',
+      state: 'PB',
+      city: 'João Pessoa',
+      date: '2022-08-25',
+      time: '11:56',
+      local: 'R. Franca Filho, 96 - Manaíra, João Pessoa',
+      establishment: 'Hao',
+      description: 'Foi babado e destruição',
+      lat: '-7.10771862377317',
+      lng: '-34.8275841317048'
+    },
+    {
+      name: 'Anônimo',
+      victim: 'Não',
+      victimName: 'tiaga',
+      age: '30',
+      violence: 'LGBTfobia',
+      physicalAggression: 'Sim',
+      state: 'PB',
+      city: 'Campina Grande',
+      date: '2022-08-17',
+      time: '03:00',
+      local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
+      establishment: 'La Suissa',
+      description: 'briga e confusão, coxinha pra todo lado',
+      lat: '-7.22138044079205',
+      lng: '-35.88470712477116'
+    },
+    {
+      name: 'Anônimo',
+      victim: 'Sim',
+      victimName: 'Anônimo',
+      age: '18',
+      violence: 'Racismo',
+      physicalAggression: 'Não',
+      state: 'PB',
+      city: '2504009',
+      date: '2022-08-25',
+      time: '18:59',
+      local: 'R. Irineu Joffily, 176, Centro, Campina Grande, PB',
+      establishment: 'La Suissa',
+      description: 'descrição do desmantelo',
+      lat: '-7.22138044079205',
+      lng: '-35.88470712477116'
+    }
+  ]
 
-  const [places, setPlaces] = useState([])
+  // const [places, setPlaces] = useState([])
   const [filter, setFilter] = useState('clear')
   const [input, setInput] = useState('')
   const [filteredPlaces, setFilteredPlaces] = useState([])
@@ -52,10 +72,11 @@ function Search() {
 
   const handleSubmit = e => {
     e.preventDefault()
+
     if (filter === 'Cidade') {
       setFilteredPlaces(
         places.filter(place =>
-          place.local.toLowerCase().includes(input.toLowerCase())
+          place.city.toLowerCase().includes(input.toLowerCase())
         )
       )
     } else if (filter === 'Estabelecimento') {
@@ -86,20 +107,32 @@ function Search() {
     } else if (input === '') {
       setFilteredPlaces(places)
     }
-
+    // errorMsg()
     setInput('')
   }
 
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('occurrences'))
-    if (items) {
-      setPlaces(items)
-      setFilteredPlaces(items)
-    }
-  }, [])
+  // const errorMsg = () => {
+  //   if (filteredPlaces.length == 0) {
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: 'Nada foi encontrado'
+  //     }).then(() => {})
+  //   }
+  // }
 
-  // useEffect(() => setFilteredPlaces(places), [])
+  useEffect(() => setFilteredPlaces(places), [])
 
+  // Caso precise acessar o localStorage
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem('occurrences'))
+  //   if (items) {
+  //     setPlaces(items)
+  //     setFilteredPlaces(items)
+  //   }
+  // }, [])
+
+  // Caso precise acessar API
   // useEffect(() => {
   //   const getPlaces = async () => {
   //     const response = await axios.get(
@@ -163,9 +196,9 @@ function Search() {
           ))}
         </div>
 
-        <div className="map">
+        {/* <div className="map">
           <Map />
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>
