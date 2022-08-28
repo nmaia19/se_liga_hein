@@ -45,6 +45,12 @@
     font-size: 24px;
     line-height: 29px;
     text-align: center;
-    color: #FFFFFF;
     font-weight: 900;
+    margin-top: 8%;
+}
+.description__btn-link {
+    color: #FFFFFF;
+}
+.description__text button:hover {
+    background-color: #3C0B8C;
 }

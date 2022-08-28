@@ -7,11 +7,14 @@
 }
 
 .logo {
-    font-size: 33px;
-    line-height: 40px;
-    color: #ffffff;
+    width: 5%;
+    position: relative;
+    left: -5.5%;
+    cursor: pointer;
 }
-
+.logo__Link {
+    z-index: 1000;
+}
 .nav ul {
     display: flex;
     flex-direction: row;
@@ -48,6 +51,7 @@
     color: #480CA8;
 }
 
+<<<<<<< HEAD
 .nav__link--area {
     position: relative;
 
@@ -82,3 +86,8 @@
     padding: 5px;
     margin-bottom: 5px;
 }
+=======
+.nav__link--button:hover {
+    background-color: #EAEAEA;
+}
+>>>>>>> dev

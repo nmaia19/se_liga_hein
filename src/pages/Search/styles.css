@@ -1,5 +1,11 @@
+.main__container {
+  display: flex;
+  justify-content: center;
+  margin-block: 82px;
+  gap: 105px;
+}
+
 .search__cards {
-  margin: 82px 106px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -7,15 +13,21 @@
 
 .search-form {
   width: 802px;
-  margin-left: 106px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+}
+
+.search-form svg {
+  position: absolute;
+  left: 17px;
 }
 
 .search__input {
@@ -33,6 +45,7 @@
   width: 153px;
   height: 61px;
 
+  text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
@@ -55,3 +68,8 @@
 
   color: #480ca8;
 }
+
+/* 
+.swal2-title {
+  font-family: 'Montserrat';
+} */

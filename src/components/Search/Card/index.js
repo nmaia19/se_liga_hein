@@ -1,6 +1,10 @@
+import { useState } from "react";
+import Modal from "../../Modal";
 import "./styles.css";
 
 export default function Card() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="card">
       <div className="tags">
@@ -24,7 +28,11 @@ export default function Card() {
           Casa do Espeto - Av. Washington Soares, 1322, Fortaleza-CE
         </h4>
       </div>
-      <button className="read-more">Ler mais</button>
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+
+      <button className="read-more" onClick={() => setModalOpen(true)}>
+        Ler mais
+      </button>
     </div>
   );
 }
