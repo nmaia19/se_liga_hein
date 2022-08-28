@@ -6,6 +6,11 @@ import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
+  const [open, setOpen] = useState(false);
+
+  const handleSignout = () => {
+    localStorage.clear();
+  };
   const navigate = useNavigate();
 
   const [logged, setLogged] = useState(false);
@@ -14,8 +19,7 @@ function NavBar() {
     if (item) {
       setLogged(true);
     }
-  }, []);
-
+  }, [logged]);
 
   return (
     <div className="navbar__content">
@@ -42,13 +46,32 @@ function NavBar() {
               Pesquisar
             </NavLink>
           </li>
+          <li
+            className="nav__link--area"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+          >
+            <Link className="nav__link" to="/login">
+              {logged ? "Minha Área" : "Entrar"}
+            </Link>
+            {open && (
+              <div className="nav__link--hover">
+                <a onMouseEnter={() => setOpen(true)} href="/my-occurrences">
+                  Minhas ocorrências
+                </a>
+                <div className="nav__link--hover-divider" />
+                <a onClick={() => handleSignout} href="/">
+                  Sair
+                </a>
+              </div>
+            )}
           <li>
             <NavLink className="nav__link"   to="/login">
               {logged ? "Minha Área" : "Entrar"}
             </NavLink>
           </li>
           <li>
-            
+        
           <NavLink className="navlink__button" to="/new-occurrence"> <button className="nav__link--button">Criar Ocorrência </button> </NavLink>
      
           </li>

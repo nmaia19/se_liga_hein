@@ -35,6 +35,9 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+
+
+
 .nav__link.active {
     border-bottom: 1px solid white;
     padding-bottom: 3px;
@@ -51,6 +54,41 @@
     text-align: center;
     color: #480CA8;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav__link--area {
+    position: relative;
+
+}
+
+.nav__link--hover {
+    position: absolute;
+    left: -25%;
+    margin-top: 0px;
+    height: auto;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    color: #480CA8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 150px;
+    height: 84px;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.nav__link--hover-divider {
+    width: 100%;
+    border-bottom: #480CA8 solid 2px;
+    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .nav__link--button:hover {

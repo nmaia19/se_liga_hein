@@ -119,7 +119,7 @@ option {
 }
 
 /* button */
-.new-occurrences__btn {
+.newOccurrence__button {
     background: #480ca8;
     border: none;
     border-radius: 40px;
