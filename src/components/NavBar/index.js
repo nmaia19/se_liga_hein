@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import logo from "../../assets/images/logo.png";
-import { NavLink , Link} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -11,6 +11,7 @@ function NavBar() {
   const handleSignout = () => {
     localStorage.clear();
   };
+  
   const navigate = useNavigate();
 
   const [logged, setLogged] = useState(false);
@@ -19,7 +20,7 @@ function NavBar() {
     if (item) {
       setLogged(true);
     }
-  }, [logged]);
+  }, []);
 
   return (
     <div className="navbar__content">
@@ -68,10 +69,7 @@ function NavBar() {
           </li>
           <li>
             <NavLink className="navlink__button" to="/new-occurrence">
-              {" "}
-              <button className="nav__link--button">
-                Criar Ocorrência{" "}
-              </button>{" "}
+              <button className="nav__link--button">Criar Ocorrência</button>
             </NavLink>
           </li>
         </ul>
