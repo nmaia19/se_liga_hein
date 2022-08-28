@@ -30,7 +30,7 @@ function AboutPlatform() {
               A partir das informações preenchidas no formulário será gerada uma
               ocorrência que poderá ser encontrada por futuros usuários ao
               buscarem o nome, o local do estabelecimento ou o tipo de violência
-              inseridos por você.{" "}
+              inseridos por você.
             </li>
           </ul>
         </p>
