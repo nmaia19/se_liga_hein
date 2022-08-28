@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import logo from "../../assets/images/logo.png";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -31,19 +32,19 @@ function NavBar() {
       <nav className="nav" id="nav">
         <ul className="nav__ul">
           <li>
-            <Link className="nav__link" to="/">
+            <NavLink className="nav__link"  to="/">
               Início
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="nav__link" to="/about">
+            <NavLink className="nav__link"  to="/about">
               Sobre
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="nav__link" to="/search">
+            <NavLink className="nav__link" to="/search">
               Pesquisar
-            </Link>
+            </NavLink>
           </li>
           <li
             className="nav__link--area"
@@ -64,11 +65,15 @@ function NavBar() {
                 </a>
               </div>
             )}
+          <li>
+            <NavLink className="nav__link"   to="/login">
+              {logged ? "Minha Área" : "Entrar"}
+            </NavLink>
           </li>
           <li>
-            <Link to="/new-occurrence">
-              <button className="nav__link--button">Criar Ocorrência</button>
-            </Link>
+        
+          <NavLink className="navlink__button" to="/new-occurrence"> <button className="nav__link--button">Criar Ocorrência </button> </NavLink>
+     
           </li>
         </ul>
       </nav>

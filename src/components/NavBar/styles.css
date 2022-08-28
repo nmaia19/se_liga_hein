@@ -38,6 +38,10 @@
 
 
 
+.nav__link.active {
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+}
 .nav__link--button {
     margin: 0 5rem 0 1rem;
     width: 195px;
@@ -49,6 +53,7 @@
     line-height: 22px;
     text-align: center;
     color: #480CA8;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nav__link--area {
@@ -88,4 +93,9 @@
 
 .nav__link--button:hover {
     background-color: #EAEAEA;
+}
+
+.navlink__button.active .nav__link--button {
+   background-color: #B5179E;
+   color: #fff;
 }
