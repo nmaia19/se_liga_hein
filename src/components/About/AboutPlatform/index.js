@@ -1,6 +1,7 @@
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import AboutUsImage from "./../../../assets/images/megaphone.png";
+import { ScrollToTop } from "../../ScrollToTop/Scroll";
 
 function AboutPlatform() {
   return (
@@ -35,7 +36,7 @@ function AboutPlatform() {
           </ul>
         </p>
         <div className="aboutus__button">
-          <button className="button"> <NavLink className="aboutus__button__link" to="/search">Procurar ocorrências</NavLink>
+          <button className="button" onClick={ScrollToTop("/search")}> <NavLink className="aboutus__button__link" to="/search">Procurar ocorrências</NavLink>
         </button>
         </div>
       </div>
