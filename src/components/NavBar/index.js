@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import logo from "../../assets/images/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -11,6 +11,7 @@ function NavBar() {
   const handleSignout = () => {
     localStorage.clear();
   };
+  
   const navigate = useNavigate();
 
   const [logged, setLogged] = useState(false);
@@ -19,7 +20,7 @@ function NavBar() {
     if (item) {
       setLogged(true);
     }
-  }, [logged]);
+  }, []);
 
   return (
     <div className="navbar__content">
@@ -32,12 +33,12 @@ function NavBar() {
       <nav className="nav" id="nav">
         <ul className="nav__ul">
           <li>
-            <NavLink className="nav__link"  to="/">
+            <NavLink className="nav__link" to="/">
               Início
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav__link"  to="/about">
+            <NavLink className="nav__link" to="/about">
               Sobre
             </NavLink>
           </li>
@@ -65,15 +66,11 @@ function NavBar() {
                 </a>
               </div>
             )}
-          <li>
-            <NavLink className="nav__link"   to="/login">
-              {logged ? "Minha Área" : "Entrar"}
-            </NavLink>
           </li>
           <li>
-        
-          <NavLink className="navlink__button" to="/new-occurrence"> <button className="nav__link--button">Criar Ocorrência </button> </NavLink>
-     
+            <NavLink className="navlink__button" to="/new-occurrence">
+              <button className="nav__link--button">Criar Ocorrência</button>
+            </NavLink>
           </li>
         </ul>
       </nav>
