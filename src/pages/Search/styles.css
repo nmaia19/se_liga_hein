@@ -1,19 +1,19 @@
-.main__container {
+.main__content {
+  height: 100vh;
   display: flex;
   justify-content: center;
   margin-block: 82px;
-  gap: 105px;
 }
 
 .search__cards {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .search-form {
   width: 802px;
-  margin: auto;
+  margin-top: 82px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +59,7 @@
 
   background: #ffffff;
   border-radius: 40px;
+  border: none;
 
   font-weight: 600;
   font-size: 18px;

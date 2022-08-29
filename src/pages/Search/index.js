@@ -1,20 +1,153 @@
 import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
-// import { Autocomplete } from '@react-google-maps/api'
-import Map from '../../components/Search/Map'
+import { useState, useEffect } from 'react'
+import Swal from 'sweetalert2'
 
 function Search() {
-  const filters = [
-    'Cidade',
-    'Próximos a mim',
-    'Estabelecimento',
-    'Tipo de Violência'
+  const filters = ['Cidade', 'Estabelecimento', 'Tipo de Violência']
+
+  const places = [
+    {
+      name: 'Nay',
+      victim: 'Sim',
+      victimName: 'coisinha',
+      age: '20',
+      violence: 'Xenofobia',
+      physicalAggression: 'Não',
+      state: 'PB',
+      city: 'João Pessoa',
+      date: '2022-08-25',
+      time: '11:56',
+      local: 'R. Franca Filho, 96 - Manaíra, João Pessoa',
+      establishment: 'Hao',
+      description: 'Foi babado e destruição',
+      lat: '-7.10771862377317',
+      lng: '-34.8275841317048'
+    },
+    {
+      name: 'Anônimo',
+      victim: 'Não',
+      victimName: 'tiaga',
+      age: '30',
+      violence: 'LGBTfobia',
+      physicalAggression: 'Sim',
+      state: 'PB',
+      city: 'Campina Grande',
+      date: '2022-08-17',
+      time: '03:00',
+      local: 'R. Irineu Joffily, 176 - Centro, Campina Grande - PB',
+      establishment: 'La Suissa',
+      description: 'briga e confusão, coxinha pra todo lado',
+      lat: '-7.22138044079205',
+      lng: '-35.88470712477116'
+    },
+    {
+      name: 'Anônimo',
+      victim: 'Sim',
+      victimName: 'Anônimo',
+      age: '18',
+      violence: 'Racismo',
+      physicalAggression: 'Não',
+      state: 'PB',
+      city: '2504009',
+      date: '2022-08-25',
+      time: '18:59',
+      local: 'R. Irineu Joffily, 176, Centro, Campina Grande, PB',
+      establishment: 'La Suissa',
+      description: 'descrição do desmantelo',
+      lat: '-7.22138044079205',
+      lng: '-35.88470712477116'
+    }
   ]
+
+  // const [places, setPlaces] = useState([])
+  const [filter, setFilter] = useState('clear')
+  const [input, setInput] = useState('')
+  const [filteredPlaces, setFilteredPlaces] = useState([])
+
+  const handleSelectChange = e => {
+    setFilter(e.target.value)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    if (filter === 'Cidade') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.city.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (filter === 'Estabelecimento') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.establishment.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (filter === 'Tipo de Violência') {
+      setFilteredPlaces(
+        places.filter(place =>
+          place.violence.toLowerCase().includes(input.toLowerCase())
+        )
+      )
+    } else if (filter === 'clear' && input !== '') {
+      let ctrArr = []
+      places.forEach((place, index) => {
+        for (const property in place) {
+          if (
+            place[property].toLowerCase().includes(input.toLowerCase()) &&
+            ctrArr.includes(places[index]) === false
+          ) {
+            ctrArr.push(places[index])
+          }
+        }
+      })
+      setFilteredPlaces(ctrArr)
+    } else if (input === '') {
+      setFilteredPlaces(places)
+    }
+    // errorMsg()
+    setInput('')
+  }
+
+  // const errorMsg = () => {
+  //   if (filteredPlaces.length == 0) {
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: 'Nada foi encontrado'
+  //     }).then(() => {})
+  //   }
+  // }
+
+  useEffect(() => setFilteredPlaces(places), [])
+
+  // Caso precise acessar o localStorage
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem('occurrences'))
+  //   if (items) {
+  //     setPlaces(items)
+  //     setFilteredPlaces(items)
+  //   }
+  // }, [])
+
+  // Caso precise acessar API
+  // useEffect(() => {
+  //   const getPlaces = async () => {
+  //     const response = await axios.get(
+  //       'https://6304f02a697408f7edbe9e13.mockapi.io/occorrences'
+  //     )
+  //     console.log(response.data.results)
+  //     setPlaces(response.data.results)
+  //     setFilteredPlaces(response.data.results)
+  //   }
+  //   getPlaces()
+  // }, [])
 
   return (
     <div>
-      <form onSubmit="" className="search-form">
+      <form onSubmit={handleSubmit} className="search-form">
         <svg
           width="25"
           height="25"
@@ -33,16 +166,16 @@ function Search() {
           placeholder="Digite sua busca"
           type="text"
           name="name"
-          // value={form.name}
-          // onChange={handleChange}
+          onChange={e => setInput(e.target.value)}
+          value={input}
         />
 
         <select
           className="search__select"
           name="category"
-          // onChange={handleChange}
+          onChange={handleSelectChange}
         >
-          <option value="">Filtrar Busca</option>
+          <option value="clear">Filtrar Busca</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
               {filter}
@@ -54,19 +187,20 @@ function Search() {
           Buscar
         </button>
       </form>
-      <div className="main__container">
-        <div className="search__cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+      <div className="main__content">
+        <div>
+          {filteredPlaces?.map((place, i) => (
+            <div className="search__cards" key={i}>
+              <Card place={place} />
+            </div>
+          ))}
         </div>
 
-        <div className="map">
+        {/* <div className="map">
           <Map />
-        </div>
+        </div> */}
       </div>
-        <Footer />
+      <Footer />
     </div>
   )
 }
