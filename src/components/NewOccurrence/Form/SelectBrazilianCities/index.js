@@ -3,7 +3,7 @@ import { citiesAlphabeticalOrder, getCitiesByState } from "../../API-IBGE/ibge";
 
 const SelectBrazilianCities = ({ state, onChange = () => {} }) => {
   const [cities, setCities] = useState([]);
-
+  console.log(cities, "cidades");
   useEffect(() => {
     getCitiesByState(state)
       .then(citiesAlphabeticalOrder)
@@ -18,7 +18,7 @@ const SelectBrazilianCities = ({ state, onChange = () => {} }) => {
       {cities.map((city) => {
         const { value, label } = city;
         return (
-          <option value={value} key={value}>
+          <option value={label} key={value}>
             {label}
           </option>
         );

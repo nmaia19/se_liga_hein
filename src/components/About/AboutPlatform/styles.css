@@ -16,7 +16,7 @@
 }
 
 .aboutus__text {
-  width: 40%;
+  width: 50%;
   text-align: justify;
   font-family: 'Montserrat';
   margin: 5% 10% 5% 0;
@@ -24,13 +24,15 @@
   font-size: 18px;
   line-height: 27px;
 }
+.aboutus__text p {
+  font-size: 18px;
 
+}
 .aboutus__text h1 {
   font-weight: 700;
   font-size: 40px;
   line-height: 106.02%;
   /* or 42px */
-
   color: #240864;
 }
 

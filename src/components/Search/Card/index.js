@@ -1,4 +1,4 @@
-import './styles.css'
+import "./styles.css";
 
 export default function Card({ place }) {
   return (
@@ -24,5 +24,5 @@ export default function Card({ place }) {
       </div>
       <button className="read-more">Ler mais</button>
     </div>
-  )
+  );
 }

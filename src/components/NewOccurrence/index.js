@@ -2,12 +2,32 @@ import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
-import Swal from "sweetalert2";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function NewOccurrenceForm() {
   const navigate = useNavigate();
+  const [formData, setFormData] = React.useState({
+    name: "",
+    age: 0,
+    city: "",
+    date: "",
+    local: "",
+    time: "",
+    establishment: "",
+    description: "",
+    violenc: "",
+    physicalAggression: "",
+    victim: "",
+    victimName: "",
+    state: "",
+  });
+
+  console.log(formData, "teste");
+
+  // Select Options
   const options = ["Sim", "Não"];
+
   const violences = [
     "Racismo",
     "Xenofobia",
@@ -21,104 +41,60 @@ function NewOccurrenceForm() {
     "Outro",
   ];
 
-  const [warning, setWarning] = useState({
-    show: false,
-    message: "",
-  });
+  function submitData(evt) {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    };
+    fetch(
+      "https://6304f02a697408f7edbe9e13.mockapi.io/occorrences",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then(() => navigate("/my-occurrences"));
+  }
 
-  const [formValues, setFormValues] = useState({
-    name: "",
-    victim: "",
-    victimName: "",
-    age: "",
-    violence: "",
-    physicalAggression: "",
-    state: "",
-    city: "",
-    date: "",
-    time: "",
-    local: "",
-    establishment: "",
-    description: "",
-    termsCheck: "",
-  });
-
-  const handleInputChange = (e) => {
+  // UF and City data
+  const [localValues, setLocalValues] = useState([]);
+  const handleLocalChange = (e) => {
     e.preventDefault();
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setFormData({ ...formData, state: e.target.value });
+    setFormData({ ...formData, city: e.target.value });
+    const { value, name } = e.target;
+    setLocalValues({ ...localValues, [name]: value });
   };
 
-  // Remover Warning
-  const warningTime = () => {
-    setTimeout(() => {
-      setWarning({
-        show: false,
-        message: "",
-      });
-    }, 3000);
-    return;
+  // saving form data in localStorage
+  const [formValues, setFormValues] = useState({});
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === "checkbox";
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
   };
 
   const handleSubmit = (e) => {
-    // Validar formulário
     e.preventDefault();
-    if (
-      formValues.name === "" ||
-      formValues.victim === "" ||
-      formValues.age === "" ||
-      formValues.violence === "" ||
-      formValues.physicalAggression === "" ||
-      formValues.state === "" ||
-      formValues.city === "" ||
-      formValues.date === "" ||
-      formValues.time === "" ||
-      formValues.local === "" ||
-      formValues.establishment === "" ||
-      formValues.description === "" ||
-      formValues.termsCheck === ""
-    ) {
-      setWarning({
-        show: true,
-        message: "Atenção, todos os campos precisam estar preenchidos.",
-      });
-      warningTime();
-    } else if (formValues.age < 18) {
-      setWarning({
-        show: true,
-        message:
-          "Você precisa ter 18 anos ou mais para cadastrar uma ocorrência.",
-      });
-      warningTime();
-      
-    } else {
-      // Salvar nova ocorrência no localStorage
-      const formData = new FormData(e.target);
-      const occurrence = Object.fromEntries(formData);
-      let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
-      occurrences.push(occurrence);
-      localStorage.setItem("occurrences", JSON.stringify(occurrences));
-
-      // Exibir mensagem 'Ocorrência salva'
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Sua ocorrência foi registrada",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      // Redirecionar usuário
-      setTimeout(() => {
-        navigate("/search");
-      }, 2500);
-    }
+    const formData = new FormData(e.target);
+    const occurrence = Object.fromEntries(formData);
+    let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
+    occurrences.push(occurrence);
+    localStorage.setItem("occurrences", JSON.stringify(occurrences));
   };
 
   return (
     <div className="new-occurrences__container">
       <h1 className="new-occurrences__heading">Nova ocorrência</h1>
-
-      <form className="new-occurrences__form" onSubmit={handleSubmit}>
+      <form
+        className="new-occurrences__form"
+        method="post"
+        onSubmit={handleSubmit}
+      >
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="name">Nome</label>
@@ -126,22 +102,24 @@ function NewOccurrenceForm() {
               type="text"
               name="name"
               id="name"
-              onChange={handleInputChange}
-              value={formValues.name || ""}
-              required
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              value={formData.name}
             />
           </fieldset>
 
-          <fieldset className="new-occurrences___form__fieldset">
+          <fieldset classNameName="new-occurrences___form__fieldset">
             <label htmlFor="victim">A vítima é você?</label>
             <select
-              name="victim"
               id="victim"
-              onChange={handleInputChange}
-              value={formValues.victim || ""}
-              required
+              value={formData.victim}
+              name="victim"
+              onChange={(e) =>
+                setFormData({ ...formData, victim: e.target.value })
+              }
             >
-              <option value="">Selecione uma opção</option>
+              <option>Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -151,13 +129,15 @@ function NewOccurrenceForm() {
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="victim-name">Nome da vítima</label>
+            <label htmlFor="victimName">Nome da vítima</label>
             <input
               type="text"
               name="victimName"
-              id="victim-name"
-              onChange={handleInputChange}
-              value={formValues.victimName || ""}
+              id="victimName"
+              onChange={(e) =>
+                setFormData({ ...formData, victimName: e.target.value })
+              }
+              value={formData.victimName}
             />
           </fieldset>
         </div>
@@ -169,22 +149,24 @@ function NewOccurrenceForm() {
               type="number"
               name="age"
               id="age"
-              onChange={handleInputChange}
-              value={formValues.age || ""}
-              required
+              value={formData.age}
+              onChange={(e) =>
+                setFormData({ ...formData, age: e.target.value })
+              }
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="violence">Violência sofrida</label>
+            <label htmlFor="violenc">Violência sofrida</label>
             <select
-              name="violence"
-              id="violence"
-              onChange={handleInputChange}
-              value={formValues.violence || ""}
-              required
+              name="violenc"
+              id="violenc"
+              value={formData.violenc}
+              onChange={(e) =>
+                setFormData({ ...formData, violenc: e.target.value })
+              }
             >
-              <option value="">Selecione uma categoria</option>
+              <option>Selecione uma categoria</option>
               {violences.map((violence) => (
                 <option key={violence} value={violence}>
                   {violence}
@@ -196,11 +178,12 @@ function NewOccurrenceForm() {
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="physicalAggression">Houve agressão física?</label>
             <select
+              value={formData.physicalAggression}
               name="physicalAggression"
               id="physicalAggression"
-              onChange={handleInputChange}
-              value={formValues.physicalAggression || ""}
-              required
+              onChange={(e) =>
+                setFormData({ ...formData, physicalAggression: e.target.value })
+              }
             >
               <option value="">Selecione uma opção</option>
               {options.map((option) => (
@@ -216,43 +199,41 @@ function NewOccurrenceForm() {
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="state">Estado</label>
             <SelectBrazilianStates
-              onChange={handleInputChange}
+              onChange={handleLocalChange}
               value={formValues.state || ""}
-              required
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="city">Cidade</label>
             <SelectBrazilianCities
-              state={formValues.state}
-              onChange={handleInputChange}
+              state={localValues.state}
+              onChange={handleLocalChange}
               value={formValues.city || ""}
-              required
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="date">Data</label>
             <input
-              name="date"
               type="date"
+              value={formData.date}
               id="date"
-              onChange={handleInputChange}
-              value={formValues.date || ""}
-              required
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="time">Horário</label>
             <input
-              name="time"
               type="time"
+              value={formData.time}
               id="time"
-              onChange={handleInputChange}
-              value={formValues.time || ""}
-              required
+              onChange={(e) =>
+                setFormData({ ...formData, time: e.target.value })
+              }
             />
           </fieldset>
         </div>
@@ -264,9 +245,10 @@ function NewOccurrenceForm() {
               name="local"
               id="local"
               placeholder="Digite o endereço"
-              onChange={handleInputChange}
-              value={formValues.local || ""}
-              required
+              value={formData.local}
+              onChange={(e) =>
+                setFormData({ ...formData, local: e.target.value })
+              }
             />
           </fieldset>
 
@@ -276,9 +258,10 @@ function NewOccurrenceForm() {
               type="text"
               name="establishment"
               id="establishment"
-              onChange={handleInputChange}
-              value={formValues.establishment || ""}
-              required
+              value={formData.establishment}
+              onChange={(e) =>
+                setFormData({ ...formData, establishment: e.target.value })
+              }
             />
           </fieldset>
         </div>
@@ -286,14 +269,15 @@ function NewOccurrenceForm() {
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="description">O que aconteceu?</label>
             <textarea
-              placeholder="Por gentileza, descreva da forma mais detalhada possível o que aconteceu"
+              placeholder="Por gentileza, descreva de forma mais detalhada possível o que aconteceu"
               name="description"
               id="description"
               cols="30"
               rows="10"
-              onChange={handleInputChange}
-              value={formValues.description || ""}
-              required
+              value={formData.description}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
             ></textarea>
           </fieldset>
         </div>
@@ -334,13 +318,18 @@ function NewOccurrenceForm() {
             name="termsCheck"
             id="termsCheck"
             onChange={handleInputChange}
-            required
+            checked={formValues.termsCheck}
           />
           <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
-        {warning.show && <span className="warning">{warning.message}</span>}
         <div className="new-occurrences__form__group">
-          <button type="submit">Registrar ocorrência</button>
+          <button
+            className="newOccurrence__button"
+            type="submit"
+            onClick={submitData}
+          >
+            Registrar ocorrência
+          </button>
         </div>
       </form>
     </div>
