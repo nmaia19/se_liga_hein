@@ -1,4 +1,3 @@
-import './styles.css'
 import AboutDescription from '../../components/About/AboutDescription'
 import AboutPlatform from '../../components/About/AboutPlatform'
 import Footer from '../../components/Footer'

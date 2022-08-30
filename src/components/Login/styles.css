@@ -35,9 +35,11 @@
     flex-direction: column;
     margin: 5% auto 0;
 }
+
 .login__fieldset label {
     margin-bottom: 2%;
 }
+
 .login__account input {
     width: 471.17px;
     height: 45px;
@@ -54,7 +56,6 @@
     margin: auto;
     height: 170.85px;
     margin: 2% auto;
-
 }
 
 .login__createaccount p {
@@ -95,6 +96,7 @@
     text-align: center;
     color: #FFFFFF;
 }
+
 .login__button button:hover {
-    background-color: #3C0B8C;
+    background-color: #B5179E;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import iconPencil from "../../assets/images/iconpencil.svg";
 import iconDelete from "../../assets/images/icondelete.svg";
+import Footer from "../../components/Footer";
 
 function MyOccurrences() {
   const [occorrences, setOccurrences] = useState([]);
@@ -53,7 +54,7 @@ function MyOccurrences() {
   }, [tipodeviolencia, occorrences]);
 
   return (
-    <div>
+    <div className="my-occurrences">
       <h1 className="my__occurrence-h1">Minhas Ocorrências</h1>
       <div className="filters">
         <div className="filter">
@@ -165,6 +166,7 @@ function MyOccurrences() {
           </>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

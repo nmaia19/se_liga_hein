@@ -7,11 +7,12 @@ import { NavLink, Link } from "react-router-dom";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const [ativaCor, setAtivaCor] = useState(false);
 
   const handleSignout = () => {
     localStorage.clear();
   };
-  
+
   const navigate = useNavigate();
 
   const [logged, setLogged] = useState(false);
@@ -20,6 +21,17 @@ function NavBar() {
     if (item) {
       setLogged(true);
     }
+  }, []);
+
+  useEffect(function () {
+    function posicaoScroll() {
+      if (window.scroll > 10) {
+        setAtivaCor(true);
+      } else {
+        setAtivaCor(false);
+      }
+    }
+    window.addEventListener('scroll', posicaoScroll);
   }, []);
 
   return (

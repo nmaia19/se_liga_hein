@@ -5,6 +5,7 @@
     color: #FFFFFF;
     margin: 3% auto;
     text-align: center;
+
 }
 
 .filters {
@@ -26,7 +27,7 @@
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     font-family: 'Montserrat';
-    margin: 2%;
+    margin: 2% auto;
 }
 
 .card__occurrence1 {

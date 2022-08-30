@@ -21,6 +21,7 @@
     text-align: justify;
     padding: 5%;
     color: #FFFFFF;
+    margin-top: 5%;
 }
 
 .description__text h1 {
@@ -52,5 +53,5 @@
     color: #FFFFFF;
 }
 .description__text button:hover {
-    background-color: #3C0B8C;
+    background-color: #B5179E;
 }

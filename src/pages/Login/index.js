@@ -1,4 +1,3 @@
-import "./styles.css";
 import LoginMain from "./../../components/Login/index";
 
 function Login() {

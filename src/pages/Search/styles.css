@@ -1,5 +1,5 @@
 .main__content {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   margin-block: 82px;
@@ -71,8 +71,8 @@
 }
 
 .search__btn:hover {
-  background: #d4c8e7; 
-  
+  background: #B5179E; 
+  color: #ffffff;
 }
 
 /* 

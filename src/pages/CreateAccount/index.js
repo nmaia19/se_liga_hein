@@ -1,8 +1,13 @@
-import "./styles.css";
 import FormCreateAccount from "../../components/FormCreateAccount";
+import Footer from "../../components/Footer";
 
 function CreateAccount() {
-  return <FormCreateAccount />;
+  return (
+    <div>
+      <FormCreateAccount />
+      <Footer />
+    </div>
+  )
 }
 
 export default CreateAccount;
