@@ -143,7 +143,7 @@
 }
 
 .fieldset__input-select {
-    width: 265.09px;
+    width: 275px;
     height: 34.97px;
 
     margin-top: 5px;
@@ -177,7 +177,7 @@
 }
 
 .fieldset__text {
-    width: 833px;
+    width: 822px;
     height: 211px;
 
     margin-top: 14px;
@@ -239,5 +239,5 @@
 }
 
 .btn:hover {
-    background: #500ebb;
+    background: #3C0B8C;
 }

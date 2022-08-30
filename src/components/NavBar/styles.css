@@ -36,12 +36,19 @@
     cursor: pointer;
 }
 
-
-
-.nav__link.active {
-    border-bottom: 1px solid white;
+/* .nav__link.active {
     padding-bottom: 3px;
+    color: #B5179E;
+} */
+
+.nav__link:hover,
+.nav__link.active,
+.nav__link--area:hover {
+    padding-bottom: 3px;
+    color: #B5179E;
 }
+
+
 .nav__link--button {
     margin: 0 5rem 0 1rem;
     width: 195px;
@@ -83,6 +90,7 @@
     order: 0;
     flex-grow: 1;
     z-index: 1111;
+    
 }
 
 .nav__link--hover-divider {
@@ -92,8 +100,9 @@
     margin-bottom: 5px;
 }
 
-.nav__link--button:hover {
-    background-color: #EAEAEA;
+.nav__link--button:hover,
+.nav__link--button.active {
+    background-color: #B5179E;
 }
 
 .navlink__button.active .nav__link--button {
