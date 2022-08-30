@@ -11,7 +11,7 @@
     width: 100%;
     margin-bottom: 3%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     font-family: 'Montserrat';
 }
 
