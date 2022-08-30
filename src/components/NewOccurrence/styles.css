@@ -64,7 +64,10 @@ textarea {
     padding: 1%;
     resize: none;
 }
-
+.new-occurrences__terms  {
+    width: 98%;
+    height: 200px;
+}
 input::placeholder,
 select,
 input,
