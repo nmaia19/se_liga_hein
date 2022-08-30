@@ -1,11 +1,15 @@
+import { useState } from "react";
+import Modal from "../../Modal";
 import "./styles.css";
 
-export default function Card({ place }) {
+export default function Card() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="card">
       <div className="tags">
-        <p>{place.name}</p>
-        <p className="level">{place.violence}</p>
+        <p>Anônimo</p>
+        <p className="level">Violência</p>
       </div>
       <div className="card__info">
         <svg
@@ -20,9 +24,14 @@ export default function Card({ place }) {
             fill="black"
           />
         </svg>
-        <h4 className="info__address">{`${place.establishment} - ${place.local}`}</h4>
+        <h4 className="info__address">
+          Casa do Espeto - Av. Washington Soares, 1322, Fortaleza-CE
+        </h4>
       </div>
-      <button className="read-more">Ler mais</button>
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      <button className="read-more" onClick={() => setModalOpen(true)}>
+        Ler mais
+      </button>
     </div>
   );
 }

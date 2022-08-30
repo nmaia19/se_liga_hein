@@ -1,0 +1,86 @@
+.modalBackground {
+  position: absolute;
+  width: 924px;
+  height: 656px;
+  left: 258px;
+  top: 193px;
+}
+
+.modalContainer {
+  width: 924px;
+  height: 656px;
+  background: #EAEAEA;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+
+.modal__button {
+  background-color: transparent;
+  outline: 0;
+  position: absolute;
+  top: 5%;
+  right: 0;
+}
+
+.modalHeader {
+  margin-top: 50px;
+}
+.ModalHeaderTitle{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: 65px;
+  margin-top: 87px;
+  color: #000000;
+}
+.ModalHeaderParagraph {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FF9A22;
+  margin-left: 65px;
+}
+.modalContent {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.modalContentLeftIcon {
+  margin-right: 320px;
+}
+.modalContentLeftParagraph {
+  margin-left: 14px;
+  margin-bottom: 1000px;
+}
+.modalContentRightTitle{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 50px;
+}
+.modalContentRightDate {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+.modalContentRightDescription {
+  margin-top: 28px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 151.4%;
+  letter-spacing: 0.09em;
+  color: #000000;
+
+}
