@@ -4,17 +4,13 @@ import './styles.css';
 import { useLoadScript, GoogleMap, MarkerF } from '@react-google-maps/api';
 
 
-const Map = () => {
-  const coordinates = { lat: -7.188307232544089, lng: -34.84094317846527};
+const Map = ({coords}) => {
+  const coordinates = { lat: coords[0], lng: coords[1]};
 
   
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   })
-
-  // const { isLoaded } = useLoadScript({
-  //   googleMapsApiKey: "AIzaSyDmIi4R8x1t3-NO2JpmJQtx27aM8Qld_Qk",
-  // })
 
   if (!isLoaded) {
     return  (
@@ -33,7 +29,7 @@ const Map = () => {
       <GoogleMap
         center={coordinates}
         zoom={14}
-        mapContainerStyle={{width: '330px', height: '513px'}}
+        mapContainerStyle={{width: '400px', height: '400px'}}
         >
           <MarkerF position={coordinates}/>
         </GoogleMap>
