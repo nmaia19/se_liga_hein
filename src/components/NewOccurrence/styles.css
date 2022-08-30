@@ -33,7 +33,7 @@
 .new-occurrences__form__group {
     display: flex;
     margin: 2.5% 0 0;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -44,16 +44,17 @@
     width: 47%;
 }
 .blocks-3 .new-occurrences___form__fieldset {
-    width: 31%;
+    width: 30%;
 }
 .blocks-4 .new-occurrences___form__fieldset {
-    width: 23%;
+    width: 22%;
 }
 
 .new-occurrences___form__fieldset {
     border: none;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 textarea {
@@ -122,6 +123,11 @@ option {
 }
 
 /* button */
+.new-occurrences__form__button {
+    display: flex;
+    justify-content: center;
+}
+
 .newOccurrence__button {
     background: #480ca8;
     border: none;
@@ -133,6 +139,10 @@ option {
     height: 50px;
     text-align: center;
     width: 30%;
+}
+
+.newOccurrence__button:hover {
+    background: #3C0B8C; 
 }
 
 .new-occurrences__btn:hover {
@@ -148,3 +158,4 @@ option {
     font-weight: bold;
     text-align: center;   
 }
+
