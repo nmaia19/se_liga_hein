@@ -3,6 +3,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Footer from "../Footer";
 
 function LoginMain() {
   const [email, setEmail] = useState("");
@@ -38,46 +39,49 @@ function LoginMain() {
   };
 
   return (
-    <div className="login__content">
-      <div className="login__account">
-        <h1>Login</h1>
-        <fieldset className="login__fieldset">
-          <label htmlFor="email">E-mail</label>
-          <input
-            value={email}
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            aria-label="Email"
-          />
-        </fieldset>
-        <fieldset className="login__fieldset">
-          <label htmlFor="password">Senha</label>
-          <input
-            value={password}
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-            aria-label="Senha"
-          />
-        </fieldset>
-        <a className="login__password" href="/createaccount">
-          Esqueceu sua senha?
-        </a>
-        <div className="login__button">
-          <button type="button" onClick={handleSignin}>
-            Entrar
-          </button>
+    <div className="login-main">
+      <div className="login__content">
+        <div className="login__account">
+          <h1>Login</h1>
+          <fieldset className="login__fieldset">
+            <label htmlFor="email">E-mail</label>
+            <input
+              value={email}
+              type="email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              aria-label="Email"
+            />
+          </fieldset>
+          <fieldset className="login__fieldset">
+            <label htmlFor="password">Senha</label>
+            <input
+              value={password}
+              type="password"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+              aria-label="Senha"
+            />
+          </fieldset>
+          <a className="login__password" href="/createaccount">
+            Esqueceu sua senha?
+          </a>
+          <div className="login__button">
+            <button type="button" onClick={handleSignin}>
+              Entrar
+            </button>
+          </div>
+        </div>
+        <div className="login__createaccount">
+          <p>Ainda não possui conta?</p>
+          <div className="login__button">
+            <Link to="/create-account">
+              <button className="nav__link-create-account">Criar conta</button>
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="login__createaccount">
-        <p>Ainda não possui conta?</p>
-        <div className="login__button">
-          <Link to="/create-account">
-            <button className="nav__link-create-account">Criar conta</button>
-          </Link>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
