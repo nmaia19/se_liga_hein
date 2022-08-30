@@ -2,9 +2,9 @@ import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
-import Swal from "sweetalert2";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import TermsAndConditions from "../TermsAndConditions";
+import Swal from "sweetalert2";
 
 function NewOccurrenceForm() {
   const navigate = useNavigate();
@@ -21,7 +21,6 @@ function NewOccurrenceForm() {
     "Intolerância religiosa",
     "Outro",
   ];
-
   const [warning, setWarning] = useState({
     show: false,
     message: "",
@@ -31,9 +30,6 @@ function NewOccurrenceForm() {
     name: "",
     victim: "",
     victimName: "",
-    age: "",
-    violence: "",
-    physicalAggression: "",
     state: "",
     city: "",
     date: "",
@@ -42,13 +38,10 @@ function NewOccurrenceForm() {
     establishment: "",
     description: "",
     termsCheck: "",
+    age: 0,
+    violenc: "",
+    physicalAggression: "",
   });
-
-  const handleInputChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
 
   // Remover Warning
   const warningTime = () => {
@@ -62,8 +55,8 @@ function NewOccurrenceForm() {
   };
 
   const handleSubmit = (e) => {
-    // Validar formulário
     e.preventDefault();
+    // Validar formulário
     if (
       formValues.name === "" ||
       formValues.victim === "" ||
@@ -91,15 +84,19 @@ function NewOccurrenceForm() {
           "Você precisa ter 18 anos ou mais para cadastrar uma ocorrência.",
       });
       warningTime();
-      
     } else {
       // Salvar nova ocorrência no localStorage
-      const formData = new FormData(e.target);
-      const occurrence = Object.fromEntries(formData);
-      let occurrences = JSON.parse(localStorage.getItem("occurrences") || "[]");
-      occurrences.push(occurrence);
-      localStorage.setItem("occurrences", JSON.stringify(occurrences));
-
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formValues),
+      };
+      fetch(
+        "https://6304f02a697408f7edbe9e13.mockapi.io/occorrences",
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then(() => navigate("/my-occurrences"));
       // Exibir mensagem 'Ocorrência salva'
       Swal.fire({
         position: "center",
@@ -110,15 +107,27 @@ function NewOccurrenceForm() {
       });
       // Redirecionar usuário
       setTimeout(() => {
-        navigate("/search");
+        navigate("/my-occurrences");
       }, 2500);
     }
+  };
+
+  // saving form data in localStorage
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === "checkbox";
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
   };
 
   return (
     <div className="new-occurrences__container">
       <h1 className="new-occurrences__heading">Nova ocorrência</h1>
-
       <form className="new-occurrences__form" onSubmit={handleSubmit}>
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
@@ -129,20 +138,18 @@ function NewOccurrenceForm() {
               id="name"
               onChange={handleInputChange}
               value={formValues.name || ""}
-              required
             />
           </fieldset>
 
-          <fieldset className="new-occurrences___form__fieldset">
+          <fieldset classNameName="new-occurrences___form__fieldset">
             <label htmlFor="victim">A vítima é você?</label>
             <select
-              name="victim"
               id="victim"
-              onChange={handleInputChange}
               value={formValues.victim || ""}
-              required
+              name="victim"
+              onChange={handleInputChange}
             >
-              <option value="">Selecione uma opção</option>
+              <option>Selecione uma opção</option>
               {options.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -152,17 +159,16 @@ function NewOccurrenceForm() {
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="victim-name">Nome da vítima</label>
+            <label htmlFor="victimName">Nome da vítima</label>
             <input
               type="text"
               name="victimName"
-              id="victim-name"
+              id="victimName"
               onChange={handleInputChange}
               value={formValues.victimName || ""}
             />
           </fieldset>
         </div>
-
         <div className="new-occurrences__form__group blocks-3">
           <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="age">Idade</label>
@@ -170,22 +176,20 @@ function NewOccurrenceForm() {
               type="number"
               name="age"
               id="age"
-              onChange={handleInputChange}
               value={formValues.age || ""}
-              required
+              onChange={handleInputChange}
             />
           </fieldset>
 
           <fieldset className="new-occurrences___form__fieldset">
-            <label htmlFor="violence">Violência sofrida</label>
+            <label htmlFor="violenc">Violência sofrida</label>
             <select
-              name="violence"
-              id="violence"
+              name="violenc"
+              id="violenc"
+              value={formValues.violenc || ""}
               onChange={handleInputChange}
-              value={formValues.violence || ""}
-              required
             >
-              <option value="">Selecione uma categoria</option>
+              <option>Selecione uma categoria</option>
               {violences.map((violence) => (
                 <option key={violence} value={violence}>
                   {violence}
@@ -303,7 +307,30 @@ function NewOccurrenceForm() {
             <label htmlFor="terms" className="terms-label">
               Termos e condições
             </label>
-           <TermsAndConditions className="new-occurrences__terms"/>
+            <textarea name="terms" id="terms" cols="30" rows="10" readOnly>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae pariatur aspernatur dolor sapiente laudantium.
+              Nesciunt molestias porro quaerat recusandae labore, enim iusto
+              delectus quod saepe eveniet minima aliquam, eaque est. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Modi corrupti nulla
+              omnis ducimus deleniti, architecto expedita facere consectetur
+              quae culpa sed libero similique error ipsum? Vero qui vel sit
+              reiciendis! Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Expedita repellat libero nulla ab accusantium id excepturi
+              voluptatum, corporis asperiores debitis enim porro voluptate
+              quibusdam officia eligendi. Consequuntur hic voluptatem ipsum.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              obcaecati aperiam suscipit eveniet, eos assumenda blanditiis
+              maxime debitis expedita eligendi delectus, magnam quia voluptas
+              impedit accusamus iusto iste fuga temporibus. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Qui deleniti ipsum
+              corporis! Impedit vero labore deleniti, eligendi temporibus
+              aliquam distinctio ut officiis ipsam nemo eveniet quasi in quia
+              atque neque? Lorem ipsum dolor, sit amet consectetur adipisicing
+              elit. Saepe asperiores provident ex quis debitis laudantium et
+              recusandae quae, rerum quia porro numquam nihil dignissimos fuga
+              similique architecto possimus. Aliquid, ab!
+            </textarea>
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
@@ -318,7 +345,9 @@ function NewOccurrenceForm() {
         </div>
         {warning.show && <span className="warning">{warning.message}</span>}
         <div className="new-occurrences__form__group">
-          <button className="new-occurrences__btn"type="submit">Registrar ocorrência</button>
+          <button className="newOccurrence__button" type="submit">
+            Registrar ocorrência
+          </button>
         </div>
       </form>
     </div>

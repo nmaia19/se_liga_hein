@@ -1,6 +1,7 @@
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import AboutUsImage from "./../../../assets/images/megaphone.png";
+import { ScrollToTop } from "../../ScrollToTop/Scroll";
 
 function AboutPlatform() {
   return (
@@ -30,12 +31,12 @@ function AboutPlatform() {
               A partir das informações preenchidas no formulário será gerada uma
               ocorrência que poderá ser encontrada por futuros usuários ao
               buscarem o nome, o local do estabelecimento ou o tipo de violência
-              inseridos por você.{" "}
+              inseridos por você.
             </li>
           </ul>
         </p>
         <div className="aboutus__button">
-          <button className="button"> <NavLink className="aboutus__button__link" to="/search">Procurar ocorrências</NavLink>
+          <button className="button" onClick={ScrollToTop("/search")}> <NavLink className="aboutus__button__link" to="/search">Procurar ocorrências</NavLink>
         </button>
         </div>
       </div>

@@ -1,0 +1,119 @@
+.my__occurrence-h1 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin: 3% auto;
+    text-align: center;
+}
+
+.filters {
+    width: 100%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Montserrat';
+}
+
+.filter {
+    width: 30%;
+}
+
+.card__occurrence {
+    width: 607px;
+    height: 101px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    margin: 2%;
+}
+
+.card__occurrence1 {
+    width: 500px;
+}
+
+.card__occurrence--headercard {
+    display: flex;
+    margin-top: 13px;
+    margin-inline: 21px;
+    justify-content: space-between;
+}
+
+.name {
+    margin: 2% 0;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.violence {
+    font-weight: 600;
+    color: #ff6464;
+    margin: 2% 0;
+}
+
+.card__occurrence--address {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #000000;
+}
+
+.card__occurrence--button {
+    font-family: 'Montserrat';
+    margin: auto;
+    width: 90px;
+    height: 21px;
+    background: #480CA8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #480ca8;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.main__cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+    margin-bottom: 10%;
+}
+
+.main__cards--div {
+    margin: auto;
+}
+
+.card__occurrence__actions {
+    display: flex;
+}
+
+.card__occurrence__actions button {
+    background-color: transparent;
+    border: transparent;
+    margin: 50% 15%;
+}
+
+.card__occurrence__actions img {
+    width: 30px;
+}
+
+
+.card__occurrence--update {
+    width: 60px;
+    background: #4361EE
+}
+
+.card__occurrence--delete {
+    background: #FF6464;
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+}

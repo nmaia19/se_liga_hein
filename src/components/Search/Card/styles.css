@@ -52,6 +52,16 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-
+  color: white;
   text-align: center;
+  border: none;
+}
+
+.openModalBtn {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
 }
