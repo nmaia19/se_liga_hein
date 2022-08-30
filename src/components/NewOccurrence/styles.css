@@ -1,144 +1,129 @@
-/* all */
-.new-occurrences__container {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    font-family: "Montserrat", sans-serif;
-    justify-content: center;
-    margin: 0 8% 5%;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* heading */
+.new-occurrences__container {
+    font-family: "Montserrat", sans-serif;
+    height: 100%;
+    margin: 3% auto 4%;
+    width: 90%;
+}
+
 .new-occurrences__heading {
     color: #eaeaea;
     font-size: 48px;
     font-weight: 700;
-    line-height: 34px;
-    margin: 5% 0 0;
+    margin: 2% auto;
     text-align: center;
 }
 
-/* form */
 .new-occurrences__form {
     background: #eaeaea;
-    border: none;
     border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 3% auto 0;
     padding: 4%;
-    width: 90%;
 }
+
 .new-occurrences__form__group {
     display: flex;
-    margin: 2.5% 0 0;
     justify-content: space-between;
+}
+
+.new-occurrences___form__fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-label {
+    font-weight: bold;
+}
+
+.new-occurrences___form__fieldset label {
+    font-size: 0.9em;
+    margin: 7% 0 1.2%;
+}
+
+.new-occurrences___form__fieldset input::placeholder,
+.new-occurrences___form__fieldset textarea::placeholder,
+.new-occurrences___form__fieldset select,
+.new-occurrences___form__fieldset input {
+    color: dimgray;
+}
+
+.new-occurrences___form__fieldset input,
+.new-occurrences___form__fieldset select {
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.8em;
+    height: 40px;
+    padding: 0 1.5%;
+    outline: none;
+}
+
+.new-occurrences___form__fieldset textarea {
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.8em;
+    height: 200px;
+    outline: none;
+    padding: 1%;
+    resize: none;
+    text-align: justify;
     width: 100%;
     margin-right: 0%;
+}
+
+.checkbox-group {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2%;
+}
+
+#termsCheck {
+    min-height: 15px;
+    min-width: 15px;
+}
+
+.checkbox-group label {
+    font-size: 0.9em;
+    padding-left: 1.5%;
 }
 
 .blocks-1 .new-occurrences___form__fieldset {
     width: 100%;
 }
+
 .blocks-2 .new-occurrences___form__fieldset {
-    width: 47%;
+    width: 48%;
 }
+
 .blocks-3 .new-occurrences___form__fieldset {
     width: 30%;
 }
+
 .blocks-4 .new-occurrences___form__fieldset {
     width: 22%;
 }
-
-.new-occurrences___form__fieldset {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-textarea {
-    background: #ffffff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 1%;
-    padding: 1%;
-    resize: none;
-}
-.new-occurrences__terms  {
-    width: 98%;
-    height: 200px;
-}
-input::placeholder,
-select,
-input,
-textarea {
-    color: dimgray;
-    font-family: inherit;
-    outline: none;
-}
-
-.new-occurrences___form__fieldset input,
-select {
-    background: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding-left: 2%;
-    height: 40px;
-    margin: 2% auto 0;
-    width: 100%;
-}
-/* labels */
-label {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-/* terms and conditions */
-.terms-label {
-    font-weight: bold;
-}
-.checkbox-group {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 5%;
-}
-.new-occurrences__terms  {
-    width: 98%;
-    height: 200px;
-}
-
-#terms-checkbox {
-    height: 30px;
-    margin-right: 2%;
-    width: 5%;
-}
-
-#terms-checkbox,
-select,
-.new-occurrences__btn,
-option {
-    cursor: pointer;
-}
-
-/* button */
 .new-occurrences__form__button {
     display: flex;
     justify-content: center;
+    margin: 4% auto 1%;
 }
-
 .newOccurrence__button {
     background: #480ca8;
     border: none;
     border-radius: 40px;
     box-shadow: 1px 1px 4px grey;
     color: #ffffff;
-    font-size: 24px;
-    font-weight: 400;
-    height: 50px;
-    text-align: center;
+    cursor: pointer;
+    font-size: 1.1em;
+    height: 55px;
     width: 30%;
 }
 
@@ -147,16 +132,15 @@ option {
 }
 
 .new-occurrences__btn:hover {
+    background-color: #3c0b8c;
     transform: scale(1.01);
     transition: 0.3s ease;
-    background-color: #3C0B8C;
 }
 
 .warning {
-    color: #FF7878;
-    margin: 2% auto;
+    color: #ff7878;
     font-size: 1em;
     font-weight: bold;
-    text-align: center;   
+    margin: 2% auto;
+    text-align: center;
 }
-

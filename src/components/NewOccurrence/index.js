@@ -2,6 +2,7 @@ import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
+import "./responsive.css"
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -140,12 +141,12 @@ function NewOccurrenceForm() {
                 name="name"
                 id="name"
                 onChange={handleInputChange}
-                value={formValues.name || "anônimo"}
+                value={formValues.name || ""}
                 required
               />
             </fieldset>
 
-            <fieldset classNameName="new-occurrences___form__fieldset">
+            <fieldset className="new-occurrences___form__fieldset">
               <label htmlFor="victim">A vítima é você?</label>
               <select
                 id="victim"
@@ -169,7 +170,7 @@ function NewOccurrenceForm() {
                 name="victimName"
                 id="victimName"
                 onChange={handleInputChange}
-                value={formValues.victimName || "anônimo"}
+                value={formValues.victimName || ""}
               />
             </fieldset>
           </div>
