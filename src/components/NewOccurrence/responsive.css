@@ -1,0 +1,68 @@
+@media (min-width: 1200px) {
+    .new-occurrences___form__fieldset label {
+        font-size: 1em;
+        margin: 5% 0 1.2%;
+    }
+
+    .new-occurrences___form__fieldset input,
+    .new-occurrences___form__fieldset select {
+        font-size: 0.9em;
+    }
+
+    .new-occurrences___form__fieldset textarea {
+        font-size: 0.9em;
+        height: 220px;
+    }
+
+    #termsCheck {
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    .checkbox-group label {
+        font-size: 1em;
+    }
+
+    .newOccurrence__button {
+        width: 25%;
+        font-size: 1.3em;
+        height: 60px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .new-occurrences___form__fieldset label {
+        font-size: 1.7em;
+        margin: 6% 0 1.6%;
+    }
+
+    .new-occurrences___form__fieldset input,
+    .new-occurrences___form__fieldset select {
+        font-size: 1.6em;
+        height: 80px;
+    }
+
+    .new-occurrences___form__fieldset textarea {
+        font-size: 1.6em;
+        height: 350px;
+    }
+
+    #termsCheck {
+        min-width: 30px;
+        min-height: 30px;
+    }
+
+    .checkbox-group label {
+        font-size: 1.7em;
+    }
+
+    .newOccurrence__button {
+        width: 25%;
+        font-size: 2em;
+        height: 100px;
+        letter-spacing: 2px;
+    }
+    .new-occurrences__heading {
+        font-size: 5em;
+    }
+}
