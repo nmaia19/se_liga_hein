@@ -28,6 +28,18 @@ function MyOccurrences() {
       .catch((err) => console.error(err));
   }, []);
 
+  const remove = (id) => {
+    fetch("https://6304f02a697408f7edbe9e13.mockapi.io/occorrences/" + id, {
+      method: "DELETE",
+    })
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   const handleChange = (event) => {
     setTipodeviolencia(event.target.value);
   };
@@ -106,7 +118,7 @@ function MyOccurrences() {
                         </button>
                       </div>
                       <div className="card__occurrence--delete">
-                        <button>
+                        <button onClick={() => remove(item.id)}>
                           <img src={iconDelete} alt="" />
                         </button>
                       </div>
