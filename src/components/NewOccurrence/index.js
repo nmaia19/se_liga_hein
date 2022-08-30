@@ -138,7 +138,8 @@ function NewOccurrenceForm() {
               name="name"
               id="name"
               onChange={handleInputChange}
-              value={formValues.name || ""}
+              value={formValues.name || "anônimo"}
+              required
             />
           </fieldset>
 
@@ -166,7 +167,7 @@ function NewOccurrenceForm() {
               name="victimName"
               id="victimName"
               onChange={handleInputChange}
-              value={formValues.victimName || ""}
+              value={formValues.victimName || "anônimo"}
             />
           </fieldset>
         </div>
@@ -189,6 +190,7 @@ function NewOccurrenceForm() {
               id="violenc"
               value={formValues.violenc || ""}
               onChange={handleInputChange}
+              required
             >
               <option>Selecione uma categoria</option>
               {violences.map((violence) => (
@@ -308,7 +310,7 @@ function NewOccurrenceForm() {
             <label htmlFor="terms" className="terms-label">
               Termos e condições
             </label>
-         <TermsAndConditions className="new-occurrences__terms"/>
+            <TermsAndConditions className="new-occurrences__terms" />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
