@@ -27,11 +27,19 @@
     width: 100%;
     width: 265.09px;
     height: 34.97px;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #312020;
 }
 
 .card__occurrence {
     width: 607px;
-    height: 101px;
+    height: 121px;
     background: #FFFFFF;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -41,6 +49,23 @@
 
 .card__occurrence1 {
     width: 500px;
+    position: relative;
+}
+
+.card__occurrence--info img {
+    width: 15px;
+    margin-right: 1%;
+}
+
+.card__occurrence--info {
+    font-family: 'Montserrat';
+    padding: 0 3%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #000000;
 }
 
 .card__occurrence--headercard {
@@ -71,26 +96,25 @@
     justify-content: start;
     align-items: center;
     color: #000000;
+    position: relative;
 }
 
 .card__occurrence--button {
     font-family: 'Montserrat';
-    margin: auto;
     width: 90px;
     height: 21px;
-    background: #480CA8;
     border-radius: 10px;
-    display: flex;
     align-items: center;
-    justify-content: center;
     color: #FFFFFF;
     background: #480ca8;
-    box-shadow: none;
     font-size: 12px;
     line-height: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
 }
 
-.main__cards {
+.my-occurrences__maincards {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -98,7 +122,7 @@
     margin-bottom: 10%;
 }
 
-.main__cards--div {
+.my-occurrences__maincards--div {
     margin: auto;
 }
 
@@ -114,12 +138,14 @@
 
 .card__occurrence__actions img {
     width: 30px;
+    margin: 40% auto;
+    align-items: center;
 }
 
 
 .card__occurrence--update {
     width: 60px;
-    background: #4361EE
+    background: #4361EE;
 }
 
 .card__occurrence--delete {
