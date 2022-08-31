@@ -244,7 +244,7 @@ function Search() {
               fill="white"
             />
           </svg>
-          <option value="clear">Filtrar Busca</option>
+          <option value="clear">Filtrar Busca ▾</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
               {filter}

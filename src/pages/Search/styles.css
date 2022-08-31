@@ -19,7 +19,7 @@
   justify-content: center;
   position: relative;
 
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -39,6 +39,11 @@
   background: #eaeaea;
   border-radius: 40px 0px 0px 40px;
   outline: none;
+
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .search__select {
@@ -54,6 +59,10 @@
   outline: none;
   appearance: none;
   border: none;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .search__btn {
