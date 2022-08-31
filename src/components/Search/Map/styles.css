@@ -1,22 +1,12 @@
-/* paper: {
-  padding: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100px',
-} */
-/* .mapContainer {
-  height: 50vh;
-  width: 100%;
-} */
+.mapContainer {
+  width: 400px;
+  height: 400px;
+  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.25);
+}
 
 .mapContainer iframe {
-  width: 330px;
-  height: 513px;
+  width: 386px;
+  height: 371px;
   border: 0;
+  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.25);
 }
-
-/* .markerContainer {
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
-
-pointer {
-  cursor: pointer;
-} */

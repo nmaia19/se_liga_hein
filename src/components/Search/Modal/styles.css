@@ -1,0 +1,112 @@
+.modal__background {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal__container {
+  /* width: 80%; */
+  width: 924px;
+  margin: 10% auto;
+  background: #eaeaea;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 83px 70px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close__button {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: -49px;
+  margin-right: -16px;
+}
+
+.close__button svg:hover,
+.close__button svg:focus {
+  fill: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__content .modal__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.modal__content .modal__violence {
+  margin-bottom: 17px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff9a22;
+}
+
+.modal__content .modal__address {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.modal__content .modal__address .address {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__description {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.description__name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.description__date {
+  margin-bottom: 28px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.full-description .description {
+  width: 328px;
+  height: 293px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 151.4%;
+
+  text-align: justify;
+  letter-spacing: 0.09em;
+}
