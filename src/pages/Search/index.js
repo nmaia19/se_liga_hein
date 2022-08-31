@@ -220,18 +220,6 @@ function Search() {
           name="category"
           onChange={handleSelectChange}
         >
-          <svg
-            width="14"
-            height="9"
-            viewBox="0 0 14 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z"
-              fill="white"
-            />
-          </svg>
           <option value="clear">Filtrar Busca ▾</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
