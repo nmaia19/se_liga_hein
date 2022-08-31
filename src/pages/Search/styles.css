@@ -41,14 +41,20 @@
 }
 
 .search__select {
+  padding: 17px;
   margin: 0;
-  width: 153px;
+  width: 160px;
   height: 61px;
+  position: relative;
 
   text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .search__btn {

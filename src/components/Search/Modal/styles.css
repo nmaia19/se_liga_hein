@@ -11,7 +11,8 @@
 }
 
 .modal__container {
-  width: 80%;
+  /* width: 80%; */
+  width: 924px;
   margin: 10% auto;
   background: #eaeaea;
   border-radius: 40px;
@@ -21,7 +22,7 @@
   flex-direction: column;
   position: relative;
   animation-name: animatetop;
-  animation-duration: 0.2s;
+  animation-duration: 0.4s;
 }
 
 /* Add Animation */
@@ -82,7 +83,7 @@
 .modal__description {
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 100px;
 }
 
 .description__name {
@@ -106,5 +107,6 @@
   font-size: 14px;
   line-height: 151.4%;
 
+  text-align: justify;
   letter-spacing: 0.09em;
 }

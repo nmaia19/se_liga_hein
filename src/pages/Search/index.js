@@ -15,7 +15,7 @@ function Search() {
       age: '18',
       violence: 'LGBTfobia',
       physicalAggression: 'Não',
-      state: 'PB',
+      state: 'Paraíba',
       city: 'João Pessoa',
       date: '25/08/2022',
       time: '18:59',
@@ -33,7 +33,7 @@ function Search() {
       age: '26',
       violence: 'Transfobia',
       physicalAggression: 'Não',
-      state: 'CE',
+      state: 'Ceará',
       city: 'Juazeiro do Norte',
       date: '30/05/2022',
       time: '13:26',
@@ -51,7 +51,7 @@ function Search() {
       age: '28',
       violence: 'Xenofobia',
       physicalAggression: 'Sim',
-      state: 'SC',
+      state: 'Santa Catarina',
       city: 'Chapecó',
       date: '08/07/2022',
       time: '10:00',
@@ -67,9 +67,9 @@ function Search() {
       victim: 'Sim',
       victimName: 'Anônimo',
       age: '42',
-      violence: 'LGBTfobia',
+      violence: 'Racismo',
       physicalAggression: 'Não',
-      state: 'SP',
+      state: 'São Paulo',
       city: 'Taubaté',
       date: '25/08/2022',
       time: '18:59',
@@ -87,7 +87,7 @@ function Search() {
       age: '20',
       violence: 'Racismo',
       physicalAggression: 'Não',
-      state: 'PB',
+      state: 'Paraíba',
       city: 'João Pessoa',
       date: '25/08/2022',
       time: '11:56',
@@ -105,7 +105,7 @@ function Search() {
       age: '30',
       violence: 'Homofobia',
       physicalAggression: 'Sim',
-      state: 'PB',
+      state: 'Paraíba',
       city: 'Campina Grande',
       date: '17/08/2022',
       time: '03:00',
@@ -232,6 +232,18 @@ function Search() {
           name="category"
           onChange={handleSelectChange}
         >
+          <svg
+            width="14"
+            height="9"
+            viewBox="0 0 14 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.645 0L7 5.56275L12.355 0L14 1.71255L7 9L0 1.71255L1.645 0Z"
+              fill="white"
+            />
+          </svg>
           <option value="clear">Filtrar Busca</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
