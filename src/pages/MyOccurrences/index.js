@@ -44,7 +44,6 @@ function MyOccurrences() {
   const handleChange = (event) => {
     setTipodeviolencia(event.target.value);
   };
-  console.log(tipodeviolencia);
 
   useEffect(() => {
     var occorrencesFilter = occorrences.filter((occurrence) => {
@@ -59,9 +58,9 @@ function MyOccurrences() {
       <div className="filters">
         <div className="filter">
           <select name="" id="">
-            <option value="0">Ordenar</option>
-            <option value="">Mais recente</option>
-            <option value="">Menos recente</option>
+            <option id="option__filter" value="0">Ordenar</option>
+            <option id="option__filter" value="">Mais recente</option>
+            <option  id="option__filter" value="">Menos recente</option>
           </select>
         </div>
         <div className="filter">
@@ -130,7 +129,8 @@ function MyOccurrences() {
             ) : filteredOccorrences.length > 0 ? (
               filteredOccorrences.map((item) => {
                 return (
-                  <div className="card__occurrence">
+                  <div className="card__occurrence" style={{ display: "flex" }}>
+                  <div className="card__occurrence1">
                     <div className="card__occurrence--headercard">
                       <p className="name">{item.name}</p>
                       <p className="violence">{item.violenc}</p>
@@ -156,6 +156,19 @@ function MyOccurrences() {
                       Ver mais
                     </button>
                   </div>
+                  <div className="card__occurrence__actions">
+                    <div className="card__occurrence--update">
+                      <button>
+                        <img src={iconPencil} alt="" />
+                      </button>
+                    </div>
+                    <div className="card__occurrence--delete">
+                      <button onClick={() => remove(item.id)}>
+                        <img src={iconDelete} alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 );
               })
             ) : (
