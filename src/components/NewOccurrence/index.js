@@ -2,6 +2,7 @@ import { useState } from "react";
 import SelectBrazilianStates from "./Form/SelectBrazilianStates";
 import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
+import "./responsive.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
