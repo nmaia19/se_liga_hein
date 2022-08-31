@@ -83,3 +83,16 @@
 
   color: #480ca8;
 }
+
+.search__btn:hover {
+  background-color: #eaeaea;
+}
+
+.search__select:hover {
+  background-color: #3c0b8c;
+}
+
+button,
+select {
+  transition: all 0.2s ease;
+}

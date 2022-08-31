@@ -16,7 +16,7 @@
 }
 
 .about-description__text {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   width: 60%;
   text-align: justify;
   padding: 5%;
@@ -34,4 +34,8 @@
   font-size: 16px;
   line-height: 151.4%;
   margin: 2% auto;
+}
+
+button {
+  transition: all 0.2s ease;
 }
