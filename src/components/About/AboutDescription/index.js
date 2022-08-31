@@ -3,8 +3,8 @@ import descriptionImage from "../../../assets/images/people.webp";
 
 function AboutDescription() {
   return (
-    <div className="description__content">
-      <div className="description__text">
+    <div className="about-description__content">
+      <div className="about-description__text">
         <h1>Sobre nós</h1>
         <p>
           O Se Liga, hein é uma plataforma que faz o mapeamento de casos de
@@ -22,7 +22,7 @@ function AboutDescription() {
           intolerância, e optar por evitá-los.
         </p>
       </div>
-      <div className="description__image">
+      <div className="about-description__image">
         <img src={descriptionImage} alt="" />
       </div>
     </div>
