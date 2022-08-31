@@ -42,13 +42,16 @@
 
 .search__select {
   margin: 0;
-  width: 153px;
+  width: 195px;
   height: 61px;
+  padding-left: 15px;
 
   text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
+
+  appearance: none;
 }
 
 .search__btn {

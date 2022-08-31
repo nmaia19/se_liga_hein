@@ -175,7 +175,7 @@ function Search() {
           name="category"
           onChange={handleSelectChange}
         >
-          <option value="clear">Filtrar Busca</option>
+          <option value="clear">Filtrar Busca ▾</option>
           {filters.map(filter => (
             <option key={filter} value={filter}>
               {filter}
