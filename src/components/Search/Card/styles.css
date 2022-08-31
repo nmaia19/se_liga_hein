@@ -1,11 +1,11 @@
 .card {
-  width: 607px;
   height: 113px;
   margin-bottom: 20px;
+  padding: 13px 21px;
 
   background: #ffffff;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 30px;
 
   font-family: 'Montserrat';
   font-weight: 400;
@@ -18,8 +18,6 @@
 }
 
 .tags {
-  margin-top: 13px;
-  margin-inline: 21px;
   display: flex;
   justify-content: space-between;
 }
@@ -30,7 +28,6 @@
 }
 
 .card__info {
-  margin-left: 21px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -41,11 +38,12 @@
 }
 
 .read-more {
-  width: 607px;
-  height: 31px;
+  width: 107px;
+  height: 30px;
+  align-self: center;
 
   background: #480ca8;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: none;
 
   font-family: 'Montserrat';

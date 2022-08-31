@@ -2,7 +2,6 @@ import Card from '../../components/Search/Card'
 import Footer from '../../components/Footer'
 import './styles.css'
 import { useState, useEffect } from 'react'
-import Swal from 'sweetalert2'
 
 function Search() {
   const filters = ['Cidade', 'Estabelecimento', 'Tipo de Violência']
@@ -164,19 +163,8 @@ function Search() {
     } else if (input === '') {
       setFilteredPlaces(places)
     }
-    // errorMsg()
     setInput('')
   }
-
-  // const errorMsg = () => {
-  //   if (filteredPlaces.length == 0) {
-  //     Swal.fire({
-  //       icon: 'error',
-  //       title: 'Oops...',
-  //       text: 'Nada foi encontrado'
-  //     }).then(() => {})
-  //   }
-  // }
 
   useEffect(() => setFilteredPlaces(places), [])
 

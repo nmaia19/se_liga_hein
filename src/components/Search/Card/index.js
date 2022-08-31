@@ -1,6 +1,10 @@
-import "./styles.css";
+import { useState } from 'react'
+import Modal from '../Modal'
+import './styles.css'
 
 export default function Card({ place }) {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <div className="card">
       <div className="tags">
@@ -22,7 +26,10 @@ export default function Card({ place }) {
         </svg>
         <h4 className="info__address">{`${place.establishment} - ${place.local}`}</h4>
       </div>
-      <button className="read-more">Ler mais</button>
+      {modalOpen && <Modal info={place} setOpenModal={setModalOpen} />}
+      <button className="read-more" onClick={() => setModalOpen(true)}>
+        Ler mais
+      </button>
     </div>
-  );
+  )
 }
