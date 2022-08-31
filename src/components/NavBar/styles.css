@@ -1,102 +1,105 @@
 .navbar__content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    margin: 2% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  margin: 2% auto;
 }
 
 .logo {
-    width: 5%;
-    position: relative;
-    left: -5.5%;
-    cursor: pointer;
+  width: 5%;
+  position: relative;
+  left: -5.5%;
+  cursor: pointer;
 }
 .logo__Link {
-    z-index: 1000;
+  z-index: 1000;
 }
 .nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    list-style: none;
-    text-decoration: none;
-    align-items: center;
-    margin: 0.8rem 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  margin: 0.8rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
 }
 
 .nav__link {
-    margin: 0 3rem 0 0;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #FFFFFF;
-    cursor: pointer;
+  margin: 0 3rem 0 0;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
 }
-
-
 
 .nav__link.active {
-    border-bottom: 1px solid white;
-    padding-bottom: 3px;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
 }
 .nav__link--button {
-    margin: 0 5rem 0 1rem;
-    width: 195px;
-    height: 54px;
-    border: none;
-    background: #FFFFFF;
-    border-radius: 40px;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #480CA8;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 5rem 0 1rem;
+  width: 195px;
+  height: 54px;
+  border: none;
+  background: #ffffff;
+  border-radius: 40px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #480ca8;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
 .nav__link--area {
-    position: relative;
-
+  position: relative;
 }
 
 .nav__link--hover {
-    position: absolute;
-    left: -25%;
-    margin-top: 0px;
-    height: auto;
-    border: none;
-    background: #FFFFFF;
-    border-radius: 10px;
-    font-size: 18px;
-    text-align: center;
-    color: #480CA8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    width: 150px;
-    height: 84px;
-    border-radius: 10px;
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    z-index: 1111;
+  position: absolute;
+  left: -25%;
+  margin-top: 0px;
+  height: auto;
+  border: none;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  color: #480ca8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 150px;
+  height: 84px;
+  border-radius: 10px;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  z-index: 1111;
 }
 
 .nav__link--hover-divider {
-    width: 100%;
-    border-bottom: #480CA8 solid 2px;
-    padding: 5px;
-    margin-bottom: 5px;
+  width: 100%;
+  border-bottom: #480ca8 solid 2px;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 .nav__link--button:hover {
-    background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 
 .navlink__button.active .nav__link--button {
-   background-color: #B5179E;
-   color: #fff;
+  background-color: #b5179e;
+  color: #fff;
+}
+
+button {
+  transition: all 0.2s ease;
 }
