@@ -1,5 +1,6 @@
 .description__content {
   margin-inline: auto;
+  padding-inline: 100px;
   width: 100%;
   height: 80vh;
   display: flex;
@@ -18,7 +19,7 @@
 
 .description__text {
   font-family: 'Montserrat';
-  width: 40%;
+  width: 50%;
   text-align: left;
   padding: 5%;
   color: #ffffff;
