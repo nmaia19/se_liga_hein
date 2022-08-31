@@ -58,34 +58,34 @@
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
+li.nav__link--area {
+    height: 22px;
+    margin-right: 25px;
+}
+
 .nav__link--area {
     position: relative;
-
 }
 
 .nav__link--hover {
+    width: 226px;
+    height: 100px;
     position: absolute;
     left: -25%;
-    margin-top: 0px;
-    height: auto;
-    border: none;
     background: #FFFFFF;
-    border-radius: 10px;
     font-size: 18px;
     text-align: center;
     color: #480CA8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: .5rem;
     width: 150px;
-    height: 84px;
     border-radius: 10px;
     flex: none;
     order: 0;
     flex-grow: 1;
     z-index: 1111;
-
 }
 
 .nav__link--hover-divider {
@@ -95,7 +95,7 @@
     margin-bottom: 5px;
 }
 
-.nav__link--button:hover ,
+.nav__link--button:hover,
 .nav__link--button.active {
     background-color: #B5179E;
     color: #FFFFFF;

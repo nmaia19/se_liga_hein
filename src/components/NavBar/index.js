@@ -31,7 +31,7 @@ function NavBar() {
         setAtivaCor(false);
       }
     }
-    window.addEventListener('scroll', posicaoScroll);
+    window.addEventListener("scroll", posicaoScroll);
   }, []);
 
   return (
@@ -65,19 +65,28 @@ function NavBar() {
             onMouseLeave={() => setOpen(false)}
           >
             <Link className="nav__link" to="/login">
-              {logged ? "Minha Área" : "Entrar"}
+              {logged ? (
+                <>
+                  <p>Minha Área</p>
+                  {open && (
+                    <div className="nav__link--hover">
+                      <a
+                        onMouseEnter={() => setOpen(true)}
+                        href="/my-occurrences"
+                      >
+                        Minhas ocorrências
+                      </a>
+                      <div className="nav__link--hover-divider" />
+                      <a onClick={() => handleSignout} href="/">
+                        Sair
+                      </a>
+                    </div>
+                  )}
+                </>
+              ) : (
+                "Entrar"
+              )}
             </Link>
-            {open && (
-              <div className="nav__link--hover">
-                <a onMouseEnter={() => setOpen(true)} href="/my-occurrences">
-                  Minhas ocorrências
-                </a>
-                <div className="nav__link--hover-divider" />
-                <a onClick={() => handleSignout} href="/">
-                  Sair
-                </a>
-              </div>
-            )}
           </li>
           <li>
             <NavLink className="navlink__button" to="/new-occurrence">
