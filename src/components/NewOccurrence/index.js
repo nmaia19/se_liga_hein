@@ -143,7 +143,7 @@ function NewOccurrenceForm() {
             />
           </fieldset>
 
-          <fieldset classNameName="new-occurrences___form__fieldset">
+          <fieldset className="new-occurrences___form__fieldset">
             <label htmlFor="victim">A vítima é você?</label>
             <select
               id="victim"
@@ -323,7 +323,7 @@ function NewOccurrenceForm() {
           <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
         {warning.show && <span className="warning">{warning.message}</span>}
-        <div className="new-occurrences__form__group">
+        <div className="new-occurrences__form__button">
           <button className="newOccurrence__button" type="submit">
             Registrar ocorrência
           </button>
