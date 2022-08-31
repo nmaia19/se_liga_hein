@@ -1,4 +1,5 @@
 .navbar__content {
+  height: 12%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -9,12 +10,14 @@
 .logo {
   width: 5%;
   position: relative;
-  /* left: -5.5%; */
+  left: -5.5%;
   cursor: pointer;
 }
+
 .logo__Link {
   z-index: 1000;
 }
+
 .nav ul {
   display: flex;
   flex-direction: row;
@@ -24,60 +27,40 @@
   align-items: center;
   margin: 0.8rem 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  line-height: 22px;
+  font-weight: 900;
 }
 
 .nav__link {
   margin: 0 3rem 0 0;
-  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
   cursor: pointer;
-
-  position: relative;
-}
-
-.nav__link:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  margin-top: 0.15em;
-  height: 0.1em;
-  /* border-bottom: 0.1em solid white; */
-  /* padding-bottom: 2px; */
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.nav__link:hover::after {
-  width: 100%;
-  height: 0.1em;
-  /* border-bottom: 0.1em solid white; */
-  /* padding-bottom: 2px; */
-  background-color: #fff;
 }
 
 .nav__link.active {
-  border-bottom: 0.1em solid white;
+  border-bottom: 1px solid white;
   padding-bottom: 3px;
 }
+
 .nav__link--button {
   margin: 0 5rem 0 1rem;
   width: 195px;
   height: 54px;
   border: none;
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 40px;
-  font-family: 'Montserrat';
-  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  color: #480ca8;
+  color: #480CA8;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+li.nav__link--area {
+  height: 22px;
+  margin-right: 25px;
 }
 
 .nav__link--area {
@@ -85,22 +68,19 @@
 }
 
 .nav__link--hover {
+  width: 226px;
+  height: 100px;
   position: absolute;
   left: -25%;
-  margin-top: 0px;
-  height: auto;
-  border: none;
-  background: #ffffff;
-  border-radius: 10px;
+  background: #FFFFFF;
   font-size: 18px;
   text-align: center;
-  color: #480ca8;
+  color: #480CA8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
   width: 150px;
-  height: 84px;
   border-radius: 10px;
   flex: none;
   order: 0;
@@ -110,20 +90,18 @@
 
 .nav__link--hover-divider {
   width: 100%;
-  border-bottom: #480ca8 solid 2px;
+  border-bottom: #480CA8 solid 2px;
   padding: 5px;
   margin-bottom: 5px;
 }
 
-.nav__link--button:hover {
-  background-color: #eaeaea;
+.nav__link--button:hover,
+.nav__link--button.active {
+  background-color: #B5179E;
+  color: #FFFFFF;
 }
 
 .navlink__button.active .nav__link--button {
-  background-color: #b5179e;
+  background-color: #B5179E;
   color: #fff;
-}
-
-button {
-  transition: all 0.2s ease;
 }
