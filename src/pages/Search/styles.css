@@ -19,7 +19,7 @@
   justify-content: center;
   position: relative;
 
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -38,20 +38,22 @@
   border-style: none;
   background: #eaeaea;
   border-radius: 40px 0px 0px 40px;
+  outline: none;
 }
 
 .search__select {
   margin: 0;
   width: 195px;
   height: 61px;
-  padding-left: 15px;
+  padding-left: 30px;
 
   text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
-
+  outline: none;
   appearance: none;
+  border: none;
 }
 
 .search__btn {

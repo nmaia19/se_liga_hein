@@ -322,7 +322,7 @@ function NewOccurrenceForm() {
           />
           <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
-        {warning.show && <span className="warning">{warning.message}</span>}
+        {warning.show && <span className="new-occurrences__form__warning">{warning.message}</span>}
         <div className="new-occurrences__form__button">
           <button className="newOccurrence__button" type="submit">
             Registrar ocorrência
