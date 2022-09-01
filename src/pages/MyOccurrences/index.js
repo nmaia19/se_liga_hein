@@ -4,10 +4,12 @@ import iconPencil from "../../assets/images/iconpencil.svg";
 import iconDelete from "../../assets/images/icondelete.svg";
 import Footer from "../../components/Footer";
 import localSvg from "../../assets/images/localsvg.svg";
+import Modal from "../../components/Search/Modal";
 function MyOccurrences() {
   const [occorrences, setOccurrences] = useState([]);
   const [tipodeviolencia, setTipodeviolencia] = useState("");
   const [filteredOccorrences, setFilteredOccurrences] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const violences = [
     "Racismo",
@@ -102,8 +104,14 @@ function MyOccurrences() {
                           {item.local}
                         </h4>
                       </div>
-                      <button className="card__occurrence--button">
-                        Ver mais
+                      {modalOpen && (
+                        <Modal info={item} setOpenModal={setModalOpen} />
+                      )}
+                      <button
+                        className="card__occurrence--button"
+                        onClick={() => setModalOpen(true)}
+                      >
+                        Ler mais
                       </button>
                     </div>
                     <div className="card__occurrence__actions">
@@ -136,8 +144,14 @@ function MyOccurrences() {
                           {item.local}
                         </h4>
                       </div>
-                      <button className="card__occurrence--button">
-                        Ver mais
+                      {modalOpen && (
+                        <Modal info={item} setOpenModal={setModalOpen} />
+                      )}
+                      <button
+                        className="card__occurrence--button"
+                        onClick={() => setModalOpen(true)}
+                      >
+                        Ler mais
                       </button>
                     </div>
                     <div className="card__occurrence__actions">

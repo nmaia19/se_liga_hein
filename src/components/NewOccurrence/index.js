@@ -43,6 +43,8 @@ function NewOccurrenceForm() {
     age: 0,
     violenc: "",
     physicalAggression: "",
+    lat: "-7.22138044079205",
+    lng: "-35.88470712477116",
   });
 
   // Remover Warning
@@ -309,7 +311,7 @@ function NewOccurrenceForm() {
             <label htmlFor="terms" className="terms-label">
               Termos e condições
             </label>
-         <TermsAndConditions className="new-occurrences__terms"/>
+            <TermsAndConditions className="new-occurrences__terms" />
           </fieldset>
         </div>
         <div className="new-occurrences__form__group checkbox-group">
@@ -322,7 +324,11 @@ function NewOccurrenceForm() {
           />
           <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
         </div>
-        {warning.show && <span className="new-occurrences__form__warning">{warning.message}</span>}
+        {warning.show && (
+          <span className="new-occurrences__form__warning">
+            {warning.message}
+          </span>
+        )}
         <div className="new-occurrences__form__button">
           <button className="newOccurrence__button" type="submit">
             Registrar ocorrência
