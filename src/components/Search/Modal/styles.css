@@ -11,8 +11,7 @@
 }
 
 .modal__container {
-  width: 70%;
-  /* width: 82em; */
+  width: 82em;
   margin: 10% auto;
   background: #eaeaea;
   border-radius: 40px;
