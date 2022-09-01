@@ -133,10 +133,10 @@
     transition: 0.3s ease;
 }
 
-.warning {
+.new-occurrences__form__warning {
     color: #ff7878;
     font-size: 1em;
     font-weight: bold;
-    margin: 2% auto;
+    margin: 4% auto;
     text-align: center;
 }

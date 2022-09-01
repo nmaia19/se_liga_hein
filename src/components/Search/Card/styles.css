@@ -1,5 +1,5 @@
 .card {
-  height: 90px;
+  height: 113px;
   margin-bottom: 20px;
   padding: 13px 21px;
 
@@ -53,6 +53,10 @@
   color: white;
   text-align: center;
   border: none;
+}
+
+.read-more:hover {
+  background-color: #3c0b8c;
 }
 
 .openModalBtn {

@@ -38,22 +38,30 @@
   border-style: none;
   background: #eaeaea;
   border-radius: 40px 0px 0px 40px;
+  outline: none;
+
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .search__select {
-  padding: 17px;
   margin: 0;
-  width: 160px;
+  width: 195px;
   height: 61px;
-  position: relative;
+  padding-left: 30px;
 
   text-align: left;
   background: #480ca8;
   border-radius: 0px 40px 40px 0px;
   color: white;
-
+  outline: none;
+  appearance: none;
+  border: none;
+  font-family: 'Montserrat';
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 20px;
 }
 
@@ -77,11 +85,14 @@
 }
 
 .search__btn:hover {
-  background: #d4c8e7; 
-  
+  background-color: #eaeaea;
 }
 
-/* 
-.swal2-title {
-  font-family: 'Montserrat';
-} */
+.search__select:hover {
+  background-color: #3c0b8c;
+}
+
+button,
+select {
+  transition: all 0.2s ease;
+}
