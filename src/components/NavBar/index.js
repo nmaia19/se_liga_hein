@@ -1,38 +1,38 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./styles.css";
-import logo from "../../assets/images/logo.png";
-import { NavLink, Link } from "react-router-dom";
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import './styles.css'
+import logo from '../../assets/images/logo.png'
+import { NavLink, Link } from 'react-router-dom'
 
 function NavBar() {
-  const [open, setOpen] = useState(false);
-  const [ativaCor, setAtivaCor] = useState(false);
+  const [open, setOpen] = useState(false)
+  // const [ativaCor, setAtivaCor] = useState(false);
 
   const handleSignout = () => {
-    localStorage.clear();
-  };
+    localStorage.clear()
+  }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(false)
   useEffect(() => {
-    var item = localStorage.getItem("email");
+    var item = localStorage.getItem('email')
     if (item) {
-      setLogged(true);
+      setLogged(true)
     }
-  }, []);
+  }, [])
 
-  useEffect(function () {
-    function posicaoScroll() {
-      if (window.scroll > 10) {
-        setAtivaCor(true);
-      } else {
-        setAtivaCor(false);
-      }
-    }
-    window.addEventListener("scroll", posicaoScroll);
-  }, []);
+  // useEffect(function () {
+  //   function posicaoScroll() {
+  //     if (window.scroll > 10) {
+  //       setAtivaCor(true);
+  //     } else {
+  //       setAtivaCor(false);
+  //     }
+  //   }
+  //   window.addEventListener("scroll", posicaoScroll);
+  // }, []);
 
   return (
     <div className="navbar__content">
@@ -40,7 +40,7 @@ function NavBar() {
         className="logo"
         src={logo}
         alt="Se liga, hein"
-        onClick={() => navigate("/")}
+        onClick={() => navigate('/')}
       />
       <nav className="nav" id="nav">
         <ul className="nav__ul">
@@ -84,7 +84,9 @@ function NavBar() {
                   )}
                 </>
               ) : (
-                <a href="/login">Entrar</a>
+                <a className="link__entrar" href="/login">
+                  Entrar
+                </a>
               )}
             </div>
           </li>
@@ -96,7 +98,7 @@ function NavBar() {
         </ul>
       </nav>
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
