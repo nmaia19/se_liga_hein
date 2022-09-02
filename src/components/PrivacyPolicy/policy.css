@@ -1,48 +1,41 @@
 .policy__container {
-    background-color: #eaeaea;
-    border-radius: 40px; 
-    width: 70%;
-    margin: 3em auto 5em;
-    padding: 2em 4em 5em;
-    font-family: "montserrat", sans-serif;
-    text-align: justify;
+  background-color: #eaeaea;
+  border-radius: 40px;
+  width: 70%;
+  margin: 3em auto 5em;
+  padding: 2em 4em 5em;
+  font-family: "montserrat", sans-serif;
+  text-align: justify;
 }
-
 .policy__h1 {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin: 1em auto;
-    text-align: center;
-    color: #480ca8;
+  font-size: 1.8em;
+  margin: 1em auto;
+  text-align: center;
 }
 .policy__h2 {
-    font-size: 1.4em;
-    margin: 1em 0;
-    font-weight: bold;
-    align-self: left;
-    color: #480ca8;
+  font-size: 1.4em;
+  margin: 1em 0;
+  align-self: left;
 }
 .policy__h3 {
-    font-size: 1.1em;
-    margin: 2em 0 .5em;
-    font-weight: bold;
-    color: #480ca8;
+  font-size: 1.1em;
+  margin: 2em 0 0.5em;
 }
 .policy__li {
-    list-style-type: disc;
-    margin: 1em 1.5em;
-    line-height: 2em;
-}
-.bold {
-    font-weight: bold;
-    color: #480ca8;
+  list-style-type: disc;
+  margin: 1em 1.5em;
+  line-height: 2em;
 }
 .policy__p {
-    line-height: 2em;
-    width: 98%;
-    margin-bottom: .8em;
+  line-height: 2em;
+  width: 98%;
+  margin-bottom: 0.8em;
 }
+.policy__h1,
+.policy__h2,
+.policy__h3,
+.bold,
 .policy__p strong {
-   font-weight: bold;
-   color: #480ca8;
+  color: #480ca8;
+  font-weight: bold;
 }

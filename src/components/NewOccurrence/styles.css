@@ -1,146 +1,149 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .new-occurrences__container {
-    font-family: "Montserrat", sans-serif;
-    height: 100%;
-    margin: 3% auto 4%;
-    width: 90%;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  margin: 3% auto 4%;
+  width: 90%;
 }
 
 .new-occurrences__heading {
-    color: #eaeaea;
-    font-size: 48px;
-    font-weight: 700;
-    margin: 2% auto;
-    text-align: center;
+  color: #eaeaea;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 2% auto;
+  text-align: center;
 }
 
 .new-occurrences__form {
-    background: #eaeaea;
-    border-radius: 40px;
-    padding: 4%;
+  background: #eaeaea;
+  border-radius: 40px;
+  padding: 4%;
 }
 
 .new-occurrences__form__group {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .new-occurrences___form__fieldset {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .terms-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .new-occurrences___form__fieldset label {
-    font-size: 0.9em;
-    margin: 7% 0 1.2%;
+  font-size: 0.9em;
+  margin: 7% 0 1.2%;
 }
 
 .new-occurrences___form__fieldset input::placeholder,
 .new-occurrences___form__fieldset textarea::placeholder,
 .new-occurrences___form__fieldset select,
 .new-occurrences___form__fieldset input {
-    color: dimgray;
+  color: dimgray;
 }
 
 .new-occurrences___form__fieldset input,
 .new-occurrences___form__fieldset select {
-    background: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 0.8em;
-    height: 40px;
-    padding: 0 1.5%;
-    outline: none;
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.8em;
+  height: 40px;
+  padding: 0 1.5%;
+  outline: none;
 }
 
 .new-occurrences___form__fieldset textarea {
-    background: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 0.8em;
-    height: 200px;
-    outline: none;
-    padding: 1%;
-    resize: none;
-    text-align: justify;
-    width: 100%;
-    margin-right: 0%;
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.8em;
+  height: 200px;
+  outline: none;
+  padding: 1%;
+  resize: none;
+  text-align: justify;
+  width: 100%;
+  margin-right: 0%;
 }
 
 .checkbox-group {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 2%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2%;
 }
 
 #termsCheck {
-    min-height: 15px;
-    min-width: 15px;
+  min-height: 15px;
+  min-width: 15px;
 }
 
 .checkbox-group label {
-    font-size: 0.9em;
-    padding-left: 1.5%;
+  font-size: 0.9em;
+  padding-left: 1.5%;
 }
 
 .blocks-1 .new-occurrences___form__fieldset {
-    width: 100%;
+  width: 100%;
 }
 
 .blocks-2 .new-occurrences___form__fieldset {
-    width: 48%;
+  width: 48%;
 }
 
 .blocks-3 .new-occurrences___form__fieldset {
-    width: 30%;
+  width: 30%;
 }
 
 .blocks-4 .new-occurrences___form__fieldset {
-    width: 22%;
+  width: 22%;
 }
 .new-occurrences__form__button {
-    display: flex;
-    justify-content: center;
-    margin: 4% auto 1%;
+  display: flex;
+  justify-content: center;
+  margin: 4% auto 1%;
 }
 .newOccurrence__button {
-    background: #480ca8;
-    border: none;
-    border-radius: 40px;
-    box-shadow: 1px 1px 4px grey;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1.1em;
-    height: 55px;
-    width: 30%;
+  background: #480ca8;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 1px 1px 4px grey;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.1em;
+  height: 55px;
+  width: 30%;
 }
 
 .newOccurrence__button:hover {
-    background-color: #3c0b8c;
-    transform: scale(1.01);
-    transition: 0.3s ease;
+  background-color: #3c0b8c;
+  transform: scale(1.01);
+  transition: 0.3s ease;
 }
 
 .new-occurrences__form__warning {
-    color: #ff7878;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 4% auto;
-    text-align: center;
+  color: #ff7878;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 4% auto;
+  text-align: center;
 }
 
 .policy__link {
- border-bottom: 1px solid #3c0b8c;
+  border-bottom: 1px solid #3c0b8c;
+}
+.policy__link:active {
+  color: #480ca8;
 }
