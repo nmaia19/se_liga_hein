@@ -140,3 +140,7 @@
     margin: 4% auto;
     text-align: center;
 }
+
+.policy__link {
+ border-bottom: 1px solid #3c0b8c;
+}

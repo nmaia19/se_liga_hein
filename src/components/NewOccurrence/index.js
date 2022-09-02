@@ -4,9 +4,10 @@ import SelectBrazilianCities from "./Form/SelectBrazilianCities";
 import "./styles.css";
 import "./responsive.css";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import TermsAndConditions from "../TermsAndConditions";
+import { ScrollToTop } from "../ScrollToTop/Scroll";
 
 function NewOccurrenceForm() {
   const navigate = useNavigate();
@@ -322,7 +323,17 @@ function NewOccurrenceForm() {
             onChange={handleInputChange}
             required
           />
-          <label htmlFor="termsCheck">Li e aceito os termos e condições.</label>
+          <label htmlFor="termsCheck">
+            Li e aceito a{" "}
+            <Link
+              onClick={ScrollToTop("/privacy-policy")}
+              className="policy__link"
+              to="/privacy-policy"
+            >
+              Política de Privacidade{" "}
+            </Link>
+            e os Termos e Condições.
+          </label>
         </div>
         {warning.show && (
           <span className="new-occurrences__form__warning">
