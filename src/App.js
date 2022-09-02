@@ -8,6 +8,7 @@ import Search from "./pages/Search";
 import NewOccurrence from "./pages/NewOccurrence";
 import MyOccurrences from "./pages/MyOccurrences";
 import CreateAccount from "./pages/CreateAccount";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="/new-occurrence" element={<NewOccurrence />}/>
         <Route path="/my-occurrences" element={<MyOccurrences />} />
       </Routes>
