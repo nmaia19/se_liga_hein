@@ -49,7 +49,7 @@ function MyOccurrences() {
     setTipodeviolencia(event.target.value);
   };
 
-  function byAge(e) {
+  function handleOrder(e) {
     setOrder(e.target.value);
     var teste = [];
     if (e.target.value === "maisrecente") {
@@ -73,7 +73,6 @@ function MyOccurrences() {
         })
       );
     }
-    console.log(teste[0]);
     setOccurrences(teste[0]);
   }
 
@@ -89,16 +88,10 @@ function MyOccurrences() {
       <h1 className="my__occurrence-h1">Minhas Ocorrências</h1>
       <div className="filters">
         <div className="filter">
-          <select name="order" id="order" onChange={byAge}>
-            <option id="option__filter" value="0">
-              Ordenar
-            </option>
-            <option id="option__filter" value="maisrecente">
-              Mais recente
-            </option>
-            <option id="option__filter" value="menosrecente">
-              Menos recente
-            </option>
+          <select name="order" id="order" onChange={handleOrder}>
+            <option value="0">Ordenar</option>
+            <option value="maisrecente">Mais recente</option>
+            <option value="menosrecente">Menos recente</option>
           </select>
         </div>
         <div className="filter">
