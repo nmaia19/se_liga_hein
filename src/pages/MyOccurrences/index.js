@@ -5,9 +5,11 @@ import iconDelete from "../../assets/images/icondelete.svg";
 import Footer from "../../components/Footer";
 import localSvg from "../../assets/images/localsvg.svg";
 import Modal from "../../components/Search/Modal";
+
 function MyOccurrences() {
   const [occorrences, setOccurrences] = useState([]);
   const [tipodeviolencia, setTipodeviolencia] = useState("");
+  const [order, setOrder] = useState("");
   const [filteredOccorrences, setFilteredOccurrences] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -47,28 +49,49 @@ function MyOccurrences() {
     setTipodeviolencia(event.target.value);
   };
 
+  function handleOrder(e) {
+    setOrder(e.target.value);
+    var teste = [];
+    if (e.target.value === "maisrecente") {
+      teste.push(
+        occorrences.sort(function (a, b) {
+          if (a.id > b.id) {
+            return -1;
+          } else {
+            return true;
+          }
+        })
+      );
+    } else if (e.target.value === "menosrecente") {
+      teste.push(
+        occorrences.sort(function (a, b) {
+          if (a.id < b.id) {
+            return -1;
+          } else {
+            return true;
+          }
+        })
+      );
+    }
+    setOccurrences(teste[0]);
+  }
+
   useEffect(() => {
     var occorrencesFilter = occorrences.filter((occurrence) => {
       return occurrence.violenc === tipodeviolencia;
     });
     setFilteredOccurrences(occorrencesFilter);
-  }, [tipodeviolencia, occorrences]);
+  }, [tipodeviolencia, occorrences, order]);
 
   return (
     <div className="my-occurrences">
       <h1 className="my__occurrence-h1">Minhas Ocorrências</h1>
       <div className="filters">
         <div className="filter">
-          <select name="" id="">
-            <option id="option__filter" value="0">
-              Ordenar
-            </option>
-            <option id="option__filter" value="">
-              Mais recente
-            </option>
-            <option id="option__filter" value="">
-              Menos recente
-            </option>
+          <select name="order" id="order" onChange={handleOrder}>
+            <option value="0">Ordenar</option>
+            <option value="maisrecente">Mais recente</option>
+            <option value="menosrecente">Menos recente</option>
           </select>
         </div>
         <div className="filter">

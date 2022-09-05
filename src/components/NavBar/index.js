@@ -5,13 +5,8 @@ import "./styles.css";
 import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
-
 function NavBar() {
   const [open, setOpen] = useState(false);
-
-  const handleSignout = () => {
-    localStorage.clear();
-  };
 
   const navigate = useNavigate();
 
@@ -66,7 +61,7 @@ function NavBar() {
                         Minhas ocorrências
                       </a>
                       <div className="nav__link--hover-divider" />
-                      <a onClick={() => handleSignout} href="/">
+                      <a onClick={() => window.localStorage.clear()} href="/">
                         Sair
                       </a>
                     </div>

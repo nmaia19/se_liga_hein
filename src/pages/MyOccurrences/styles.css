@@ -9,8 +9,7 @@
 }
 
 .filters {
-    width: 50%;
-    margin-bottom: 3%;
+    width: 60%;
     display: flex;
     margin: auto;
     justify-content: center;
@@ -18,23 +17,27 @@
 }
 
 .filter {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: center;
 }
 
 .filter select {
-    width: 100%;
-    width: 265.09px;
-    height: 34.97px;
-    border-radius: 6px;
+    width: 400px;
+    height: 2.5rem;
+    border-radius: 10px;
     font-family: 'Montserrat';
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 900;
     line-height: 20px;
     display: flex;
+    text-align: center;
     align-items: center;
     color: #312020;
+}
+
+.filter option {
+    border-radius: 20px;
 }
 
 .card__occurrence {
@@ -44,7 +47,7 @@
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     font-family: 'Montserrat';
-    margin: 2% auto;
+    margin: 4% auto;
 }
 
 .card__occurrence1 {
@@ -120,6 +123,7 @@
     flex-direction: column;
     min-height: 50vh;
     margin-bottom: 10%;
+    margin-top: 1%;
 }
 
 .my-occurrences__maincards--div {
