@@ -39,6 +39,7 @@
 button {
   transition: all 0.2s ease;
 }
+
 .description__text button {
   width: 222px;
   height: 68px;
@@ -52,9 +53,24 @@ button {
   font-weight: 900;
   margin-top: 8%;
 }
+
 .description__btn-link {
   color: #ffffff;
 }
+
 .description__text button:hover {
   background-color: #3c0b8c;
+}
+
+@media (max-width: 950px) {
+
+  .description__content {
+    height: 120vh;
+    flex-direction: column;
+  }
+
+  .description__text{
+    margin: auto;
+    width: 100%;
+  }
 }
