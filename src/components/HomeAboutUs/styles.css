@@ -73,20 +73,34 @@
 
 
 @media (max-width: 950px) {
-    .aboutus__content {
-        height: 120vh;
+
+    .about-description__content {
+        display: flex;
         flex-direction: column;
     }
 
-    .description__text {
+    div.about-description__image>img {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .about-description__text {
+        width: 100%;
+        padding: 0%;
         margin: auto;
+    }
+
+    .aboutus__content {
+        position: relative;
+        margin-top: 80%;
+        flex-direction: column;
+    }
+
+    div.aboutus__text {
         width: 100%;
     }
 
-     div.aboutus__text{
-        width: 100%;
-    }
-    .aboutus__button{
+    .aboutus__button {
         margin-right: 5%;
     }
 
