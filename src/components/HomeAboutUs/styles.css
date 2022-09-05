@@ -60,7 +60,7 @@
     line-height: 29px;
     font-weight: 900;
     text-align: center;
-   
+
 }
 
 .aboutus__text button:hover {
@@ -69,4 +69,39 @@
 
 .aboutus__button__link {
     color: #FFFFFF;
+}
+
+
+@media (max-width: 950px) {
+
+    .about-description__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.about-description__image>img {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .about-description__text {
+        width: 100%;
+        padding: 0%;
+        margin: auto;
+    }
+
+    .aboutus__content {
+        position: relative;
+        margin-top: 80%;
+        flex-direction: column;
+    }
+
+    div.aboutus__text {
+        width: 100%;
+    }
+
+    .aboutus__button {
+        margin-right: 5%;
+    }
+
 }
